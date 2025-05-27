@@ -1,0 +1,11 @@
+/*Esse arquivo deve conter as variaveis de estilo global para o projeto, como cores, fontes, etc.*/
+
+
+/*PALETA DE CORES:*/
+:root {
+--dark-grey: #292F36,
+--light-grey: #BDC4A7,
+--cream: #F3F9D2,
+--light-orange: #F26419,
+--dark-orange: #F44708  
+}
