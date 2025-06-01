@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro Saúde - Sobre sua saúde</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>Cadastro Saúde</h2>
+  <p>Sobre sua sáude</p>
+
+  <div class="form-row">
+    <div class="form-group" style="flex: 1;">
+      <label>Idade</label>
+      <input type="number" id="idade">
+    </div>
+    <div class="form-group" style="flex: 1;">
+      <label>Altura</label>
+      <input type="text" id="altura">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Tem alergia</label>
+    <input type="text" id="alergia">
+  </div>
+
+  <div class="form-group">
+    <label>Gênero</label>
+    <select id="genero">
+      <option value="">Selecione</option>
+      <option>Masculino</option>
+      <option>Feminino</option>
+      <option>Outro</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Tem doenças crônicas</label>
+    <input type="text" id="cronicas">
+  </div>
+
+  <div class="form-group">
+    <label>Faz uso de medicamentos com frequência</label>
+    <input type="text" id="medicamentos">
+  </div>
+
+  <div class="button-group">
+    <button class="cancel" onclick="window.location.href='index.html'">
+      <span class="icon">
+        <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_6_974)">
+            <path d="M20 10.5L12 17.5M12 10.5L20 17.5M29.3334 14C29.3334 20.4433 23.3638 25.6667 16 25.6667C8.63622 25.6667 2.66669 20.4433 2.66669 14C2.66669 7.55668 8.63622 2.33334 16 2.33334C23.3638 2.33334 29.3334 7.55668 29.3334 14Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_6_974">
+            <rect width="32" height="28" fill="white"/>
+            </clipPath>
+            </defs>
+        </svg>
+      </span> Cancelar
+    </button>
+    <button class="save" onclick="validarTela2()">
+      <span class="icon">
+        <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.6667 24.5V15.1667H9.33333V24.5M9.33333 3.5V9.33333H20M25.3333 24.5H6.66667C5.95942 24.5 5.28115 24.2542 4.78105 23.8166C4.28095 23.379 4 22.7855 4 22.1667V5.83333C4 5.21449 4.28095 4.621 4.78105 4.18342C5.28115 3.74583 5.95942 3.5 6.66667 3.5H21.3333L28 9.33333V22.1667C28 22.7855 27.719 23.379 27.219 23.8166C26.7189 24.2542 26.0406 24.5 25.3333 24.5Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span> Salvar
+    </button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
