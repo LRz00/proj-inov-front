@@ -57,6 +57,6 @@ function validarTela1() {
     campos.forEach(id => dadosTela2[id] = document.getElementById(id).value.trim());
     
     localStorage.setItem('dadosTela2', JSON.stringify(dadosTela2));
-    window.location.href = 'tela3.html';
+    window.location.href = '/paginas/exibir-cadastro-saude/index.html';
   }
 

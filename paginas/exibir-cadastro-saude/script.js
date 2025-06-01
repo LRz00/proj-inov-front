@@ -47,7 +47,7 @@ function formatarCampo(campo) {
   function editarCadastro() {
     if (confirm('Tem certeza que deseja editar os dados?')) {
       localStorage.clear();
-      window.location.href = 'tela1.html';
+      window.location.href = '/paginas/editar-cadastro-saude/index.html';
     }
   }
 
