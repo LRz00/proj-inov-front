@@ -7,3 +7,5 @@ Front-end para o projeto da matéria Projeto de Inovação do 6º semestre de AD
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ### Telas:
+![image](https://github.com/user-attachments/assets/c41272ec-ac85-4bb2-8a50-3145a23cc5b2)
+
