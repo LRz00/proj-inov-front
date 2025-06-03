@@ -1,0 +1,38 @@
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #343a40;
+}
+
+legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #495057;
+}
+
+fieldset {
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+.invalid-feedback.d-block {
+  display: none;
+}
+
+.was-validated .form-check-input:invalid ~ .form-check-label,
+.was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .form-control:valid {
+  border-color: #198754;
+}
+
+.btn {
+  min-width: 120px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pessoa Física</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Cadastro de Pessoa Física</h2>
+    <form class="needs-validation" novalidate>
+      <!-- Informações Pessoais -->
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">Informações Pessoais</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nome" class="form-label">Nome completo</label>
+              <input type="text" class="form-control" id="nome" name="nome" required>
+              <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cpf" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" placeholder="000.000.000-00">
+              <div class="invalid-feedback">Digite um CPF válido no formato 000.000.000-00.</div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="nascimento" class="form-label">Data de nascimento</label>
+              <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+              <div class="invalid-feedback">Por favor, informe sua data de nascimento.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="telefone" class="form-label">Telefone / Celular</label>
+              <input type="tel" class="form-control" id="telefone" name="telefone" pattern="\d{10,11}" maxlength="11" required>
+              <div class="invalid-feedback">Informe um número válido com DDD (10 ou 11 dígitos).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endereço -->
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">Endereço</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3 mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" name="cep" pattern="\d{5}-\d{3}" maxlength="9" required placeholder="00000-000" oninput="formatCEP(this)">
+                <div class="invalid-feedback">Informe um CEP válido (00000-000).</div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="logradouro" class="form-label">Logradouro</label>
+              <input type="text" class="form-control" id="logradouro" name="logradouro" required>
+              <div class="invalid-feedback">Informe o logradouro.</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="numero" class="form-label">Número</label>
+                <input type="number" class="form-control" id="numero" name="numero" required>
+            <div class="invalid-feedback">Informe o número.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="bairro" class="form-label">Bairro</label>
+              <input type="text" class="form-control" id="bairro" name="bairro" required>
+              <div class="invalid-feedback">Informe o bairro.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" name="cidade" required>
+              <div class="invalid-feedback">Informe a cidade.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="estado" name="estado" maxlength="2" pattern="[A-Z]{2}" required placeholder="SP">
+              <div class="invalid-feedback">Informe a sigla do estado (ex: SP, RJ).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Mercantil -->
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">Status de Inscrição Mercantil</div>
+        <div class="card-body">
+          <label class="form-label">Possui inscrição mercantil?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mercantil" id="mercantilSim" value="sim" required>
+            <label class="form-check-label" for="mercantilSim">Sim</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mercantil" id="mercantilNao" value="nao" required>
+            <label class="form-check-label" for="mercantilNao">Não</label>
+          </div>
+          <div class="invalid-feedback d-block">Escolha uma opção.</div>
+        </div>
+      </div>
+
+      <!-- Profissional Autônomo -->
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">Profissional Autônomo</div>
+        <div class="card-body">
+          <label class="form-label">É profissional autônomo?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="autonomo" id="autonomoSim" value="sim" required>
+            <label class="form-check-label" for="autonomoSim">Sim</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="autonomo" id="autonomoNao" value="nao" required>
+            <label class="form-check-label" for="autonomoNao">Não</label>
+          </div>
+          <div class="invalid-feedback d-block">Escolha uma opção.</div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end gap-2 mb-5">
+        <button type="reset" class="btn btn-secondary">Limpar</button>
+        <button type="submit" class="btn btn-primary">Salvar Cadastro</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
