@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Agendamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Listagem de Agendamentos por Paciente</h2>
+    <table>
+        <thead>
+        <tr>
+            <th class="thead">ID</th>
+            <th class="thead">Nome do Paciente</th>
+            <th class="thead">Nome do Exame</th>
+            <th class="thead">Data e Hora</th>
+            <th class="thead">Local de Coleta</th>
+            <th class="thead">Observações</th>
+            <th class="thead">Status</th>
+            <th class="thead">Data de Criação</th>
+            <th class="thead">Ações</th> <!-- Nova coluna para a lupa -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>João da Silva</td>
+            <td>Hemograma Completo</td>
+            <td>2025-06-01 09:00</td>
+            <td>Laboratório Central</td>
+            <td>Jejum de 12h</td>
+            <td>AGENDADO</td>
+            <td>2025-05-30 14:35</td>
+            <td>
+                <a href="../detalhes-paciente/index.html?id=1" class="action-link"> <!-- Utilizar o ?id=1 para buscar o paciente pelo seu ID -->
+                    <img src="../../images/icons/search-icon.png" alt="Ver detalhes do paciente" class="lupa-icon">
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="../agendar-exame/index.html" class="btn-voltar">← Voltar</a>
+</div>
+</body>
+</html>
