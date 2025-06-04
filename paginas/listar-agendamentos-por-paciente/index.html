@@ -22,26 +22,13 @@
             <th class="thead">Ações</th> <!-- Nova coluna para a lupa -->
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>João da Silva</td>
-            <td>Hemograma Completo</td>
-            <td>2025-06-01 09:00</td>
-            <td>Laboratório Central</td>
-            <td>Jejum de 12h</td>
-            <td>AGENDADO</td>
-            <td>2025-05-30 14:35</td>
-            <td>
-                <a href="../detalhes-paciente/index.html?id=1" class="action-link"> <!-- Utilizar o ?id=1 para buscar o paciente pelo seu ID -->
-                    <img src="../../images/icons/search-icon.png" alt="Ver detalhes do paciente" class="lupa-icon">
-                </a>
-            </td>
-        </tr>
+        <tbody id="tabelaAgendamentos">
+        
         </tbody>
     </table>
 
     <a href="../agendar-exame/index.html" class="btn-voltar">← Voltar</a>
 </div>
+<script src="./script.js"></script>
 </body>
 </html>

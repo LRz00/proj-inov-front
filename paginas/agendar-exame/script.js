@@ -1,6 +1,12 @@
-
 function salvarAgendamento() {
     const form = document.getElementById("formAgendamento");
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        alert("Você precisa estar logado para agendar um exame.");
+        window.location.href = "/login.html"; // redireciona para login se necessário
+        return;
+    }
 
     // Coleta dos valores dos campos
     const pacienteId = form.pacienteId.value.trim();
@@ -46,13 +52,18 @@ function salvarAgendamento() {
     fetch('http://localhost:8080/agendamento-exame', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Token JWT no cabeçalho
         },
         body: JSON.stringify(dados)
     })
     .then(response => {
         if (response.ok) {
             alert("Agendamento salvo com sucesso!");
+            form.reset();
+        } else if (response.status === 401) {
+            alert("Sessão expirada. Faça login novamente.");
+            window.location.href = "/login.html";
         } else {
             alert("Erro ao salvar o agendamento.");
         }
@@ -62,4 +73,3 @@ function salvarAgendamento() {
         alert("Erro na comunicação com o servidor.");
     });
 }
-
