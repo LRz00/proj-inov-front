@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login do Cidadão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Login do Cidadão</h2>
+    <form id="form-login">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="Digite seu e-mail" required />
+
+      <label for="senha">Senha</label>
+      <div class="senha-container">
+        <input type="password" id="senha" placeholder="Digite sua senha" required />
+        <span id="toggleSenha">👁️</span>
+      </div>
+
+      <button type="submit">Entrar</button>
+      <p id="mensagem"></p>
+    </form>
+  </div>
+
+  <script>
+    const senhaInput = document.getElementById("senha");
+    const toggleSenha = document.getElementById("toggleSenha");
+    const formLogin = document.getElementById("form-login");
+    const mensagem = document.getElementById("mensagem");
+
+    toggleSenha.addEventListener("click", () => {
+      const tipo = senhaInput.getAttribute("type") === "password" ? "text" : "password";
+      senhaInput.setAttribute("type", tipo);
+      toggleSenha.textContent = tipo === "password" ? "👁️" : "🙈";
+    });
+
+    formLogin.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const senha = senhaInput.value.trim();
+
+      if (email === "" || senha === "") {
+        mensagem.textContent = "Por favor, preencha todos os campos.";
+        mensagem.style.color = "red";
+        return;
+      }
+
+      // Simulação de sucesso
+      mensagem.textContent = "Login efetuado com sucesso!";
+      mensagem.style.color = "green";
+    });
+  </script>
+</body>
+</html>
