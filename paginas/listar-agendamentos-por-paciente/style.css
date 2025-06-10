@@ -1,13 +1,15 @@
+@import url("../../global.css");
+
 body {
     font-family: Arial, sans-serif;
-    background: #eef1f5;
+    background: var(--cream);
     padding: 40px;
 }
 
 .container {
     max-width: 1000px;
     margin: auto;
-    background: white;
+    background: var(--light-grey);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -31,7 +33,7 @@ th, td {
 }
 
 th {
-    background-color: #DB7E43;
+    background-color: var(--dark-orange);
     color: white;
 }
 
@@ -39,8 +41,12 @@ th {
     color: black;
 }
 
-tr:hover {
+tr {
     background-color: #f1f1f1;
+}
+
+tr:hover {
+    background-color: white;
 }
 
 .lupa-icon {
@@ -63,7 +69,7 @@ tr:hover {
 .btn-voltar {
     display: inline-block;
     margin-top: 20px;
-    background-color: #DB7E43;
+    background-color: var(--dark-orange);
     color: black;
     padding: 10px 20px;
     border-radius: 8px;
@@ -73,5 +79,5 @@ tr:hover {
 }
 
 .btn-voltar:hover {
-    background-color: #bf682f;
+    background-color: var(--light-orange);
 }

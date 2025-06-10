@@ -1,9 +1,11 @@
+@import url("../../global.css");
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    background: var(--cream);
     margin: 0;
     padding: 0;
 }
@@ -11,7 +13,7 @@ body {
 .container {
     width: 500px;
     margin: 50px auto;
-    background: #fff;
+    background: var(--light-grey);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -20,13 +22,14 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #333;
+    color: var(--dark-grey);
 }
 
 label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
+    color: var(--dark-grey);
 }
 
 input, textarea, select {
@@ -40,8 +43,8 @@ input, textarea, select {
 button {
     margin-top: 30px;
     width: 100%;
-    background: #DB7E43;
-    color: black;
+    background: var(--dark-orange);
+    color: var(--dark-grey);
     padding: 12px;
     border: none;
     border-radius: 5px;
@@ -55,7 +58,7 @@ button {
 }
 
 button:hover {
-    background: #b46534;
+    background: var(--light-orange);
 }
 
 .icon {
