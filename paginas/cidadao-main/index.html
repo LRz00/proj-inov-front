@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Bem-vindo, Cidadão!</h1>
+
+        <fieldset>
+            <legend>Menu Principal</legend>
+            <a href="../solicitar-manutencao-vias/cidadão/index.html" class="btn-link">Solicitar Manutençao de Vias Publicas</a>
+            <a href="pagina2.html" class="btn-link">Funcionalidade 2</a>
+            <a href="pagina3.html" class="btn-link">Funcionalidade 3</a>
+            <a href="pagina4.html" class="btn-link">Funcionalidade 4</a>
+        </fieldset>
+
+        <div id="mensagem"></div>
+    </div>
+
+    <script>
+        function navegar(destino) {
+            const mensagem = document.getElementById('mensagem');
+            mensagem.innerText = `Você escolheu: ${destino}`;
+            // Aqui futuramente você pode usar window.location.href para redirecionar para outras páginas
+        }
+    </script>
+
+</body>
+
+</html>
