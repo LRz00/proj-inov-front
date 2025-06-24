@@ -1,0 +1,88 @@
+body {
+    background-color: #f8f9fa; /* Fundo cinza bem claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto; /* Caso a tabela fique larga em telas pequenas */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc; /* Borda externa da tabela */
+}
+
+th, td {
+    padding: 18px 14px; /* Espaçamento interno maior */
+    border: 1px solid #ccc; /* Bordas internas */
+    text-align: left;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+th {
+    background-color: #e9ecef; /* Cabeçalho cinza claro */
+    color: #333;
+    font-weight: bold;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9; /* Faixa de cinza em linhas pares */
+}
+
+tr:hover td {
+    background-color: #f1f1f1; /* Destaque quando passa o mouse */
+}
+
+/* Responsividade para celular e telas pequenas */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none; /* Some com o cabeçalho em telas pequenas */
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    td:before {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Rótulos que aparecem antes dos dados no mobile */
+    td:nth-of-type(1):before { content: "ID"; }
+    td:nth-of-type(2):before { content: "Data"; }
+    td:nth-of-type(3):before { content: "Nome do Cidadão"; }
+    td:nth-of-type(4):before { content: "Endereço"; }
+    td:nth-of-type(5):before { content: "Tipo de Problema"; }
+    td:nth-of-type(6):before { content: "Descrição"; }
+    td:nth-of-type(7):before { content: "Status"; }
+}
