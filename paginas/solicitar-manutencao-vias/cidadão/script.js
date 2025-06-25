@@ -1,21 +1,24 @@
-const APIURL = "nao tem ainda"
+const APIURL = "http://localhost:8080/solicitacao-man-via-publica"
 
 document.getElementById('maintenanceForm').addEventListener('submit', async function (e) {
     e.preventDefault();
   
-    const token = localStorage.getItem('token');
-    if (!token) {
-      alert('Usuário não autenticado.');
-      return;
-    }
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
   
     const data = {
-      tipo: document.getElementById('tipo').value,
       descricao: document.getElementById('descricao').value,
-      rua: document.getElementById('rua').value,
-      numero: document.getElementById('numero').value,
+      nomeRua: document.getElementById('rua').value,
       bairro: document.getElementById('bairro').value,
-      complemento: document.getElementById('complemento').value
+      dataCriada: new Date(),
+      status: "ABERTA",
+      solicitante: {
+        id: 1,
+        nome: "eu",
+        senha: "123",
+        cpf: "1234",
+        email: 'email@hotmail.com',
+        perfil: "CIDADAO"
+      }
     };
   
     try {
@@ -23,7 +26,6 @@ document.getElementById('maintenanceForm').addEventListener('submit', async func
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data)
       });
