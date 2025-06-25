@@ -1,0 +1,35 @@
+/* Estilos globais */
+body {
+  background-color: var(--cream);
+  color: var(--dark-grey);
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.btn-primary {
+  background-color: var(--light-orange);
+  border-color: var(--light-orange);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+}
+
+.header {
+  background-color: var(--dark-grey);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+}
+
+label {
+  color: var(--dark-grey);
+}
