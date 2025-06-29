@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("lista-ocorrencias");
 
     function atualizarSolicitacao(id, dados) {
-        return fetch(`http://localhost:8080/`, { // William - mudar pro novo endpoint aqui
+        return fetch(`http://localhost:8080/solicitacao-plantio-arvore`, { // William - mudar pro novo endpoint aqui
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Busca as ocorrências e monta a lista
-    fetch("http://localhost:8080/") // William - mudar pro novo endpoint aqui
+    fetch("http://localhost:8080/solicitacao-plantio-arvore") // William - mudar pro novo endpoint aqui
         .then(response => {
             if (!response.ok) throw new Error("Erro ao carregar dados");
             return response.json();

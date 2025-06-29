@@ -1,27 +1,28 @@
-const APIURL = "http://localhost:8080/" // William - mudar pro novo endpoint aqui
+const APIURL = "http://localhost:8080/solicitacao-plantio-arvore" // William - mudar pro novo endpoint aqui
 
 document.getElementById('maintenanceForm').addEventListener('submit', async function (e) {
     e.preventDefault();
   
     const usuario = JSON.parse(localStorage.getItem('usuario'));
   
-    const data = {
-      descricao: document.getElementById('descricao').value,
-      nomeRua: document.getElementById('rua').value,
-      nomeArvore: document.getElementById('arvore').value,
-      numeroCasa: document.getElementById('casa').value,
-      bairro: document.getElementById('bairro').value,
-      dataCriada: new Date(),
-      status: "ABERTA",
-      solicitante: {
-        id: 1,
-        nome: "eu",
-        senha: "123",
-        cpf: "1234",
-        email: 'email@hotmail.com',
-        perfil: "CIDADAO"
+    const data = { 
+  nomeRua: document.getElementById('rua').value,
+  bairro: document.getElementById('bairro').value,
+  dataCriada: new Date().toISOString(), // Corrigido
+  nomeArvore: document.getElementById('arvore').value,
+  numCasa: document.getElementById('casa').value,
+  descricao: document.getElementById('descricao').value,
+  status: "ABERTA",
+  solicitante: {
+    id: 2,
+    nome: "eu",
+    senha: "123",
+    cpf: "12345678901",
+    email: "email@hotmail.com",
+    perfil: "1" // Corrigido
       }
     };
+    console.log(data)
   
     try {
       const response = await fetch(APIURL, {

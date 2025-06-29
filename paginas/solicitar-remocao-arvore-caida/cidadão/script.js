@@ -1,4 +1,4 @@
-const APIURL = "http://localhost:8080/" // William - mudar pro novo endpoint aqui
+const APIURL = "http://localhost:8080/solicitacao-remocao-arvore-caida" // William - mudar pro novo endpoint aqui
 
 document.getElementById('maintenanceForm').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -12,12 +12,12 @@ document.getElementById('maintenanceForm').addEventListener('submit', async func
       dataCriada: new Date(),
       status: "ABERTA",
       solicitante: {
-        id: 1,
+        id: 2,
         nome: "eu",
         senha: "123",
-        cpf: "1234",
+        cpf: "12345678901",
         email: 'email@hotmail.com',
-        perfil: "CIDADAO"
+        perfil: 1
       }
     };
   
