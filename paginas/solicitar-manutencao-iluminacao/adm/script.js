@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Busca as ocorrências e monta a lista
-    fetch("http://localhost:8080/solicitacao-man-iluminacao-publica")
+    fetch("http://localhost:8080/solicitacao-man-via-publica")
         .then(response => {
             if (!response.ok) throw new Error("Erro ao carregar dados");
             return response.json();

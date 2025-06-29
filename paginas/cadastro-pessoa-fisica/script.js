@@ -39,15 +39,52 @@ cpfInput.addEventListener('input', (e) => {
   e.target.value = formatted;
 });
 
-  function formatCEP(input) {
-    // Remove tudo que não for número
-    let value = input.value.replace(/\D/g, '');
+// Envio de dados ao backend
+document.querySelector('.needs-validation').addEventListener('submit', async function (event) {
+  event.preventDefault();
 
-    // Aplica o formato 00000-000
-    if (value.length > 5) {
-      value = value.slice(0, 5) + '-' + value.slice(5, 8);
-    }
-
-    // Limita o tamanho para 9 caracteres (5 + 1 + 3)
-    input.value = value.slice(0, 9);
+  const form = event.target;
+  if (!form.checkValidity()) {
+    event.stopPropagation();
+    form.classList.add('was-validated');
+    return;
   }
+
+  // Coleta dos valores
+  const nome = document.getElementById('nome').value.trim();
+  const cpf = document.getElementById('cpf').value.replace(/\D/g, ''); // remove pontuação
+  const email = document.getElementById('email').value.trim();
+  const senha = document.getElementById('senha').value;
+  const perfil = document.getElementById('tipoUsuario').value.toUpperCase(); // "CIDADAO" ou "ADMINISTRADOR"
+
+  const dados = {
+    nome,
+    cpf,
+    email,
+    senha,
+    perfil
+  };
+
+  try {
+    const resposta = await fetch('http://localhost:8080/usuarios', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    });
+
+    if (resposta.ok) {
+      alert('Cadastro realizado com sucesso!');
+      form.reset();
+      form.classList.remove('was-validated');
+    } else {
+      const erro = await resposta.json();
+      console.error(erro);
+      alert('Erro ao cadastrar: ' + (erro.message || resposta.status));
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Erro na comunicação com o servidor.');
+  }
+});
