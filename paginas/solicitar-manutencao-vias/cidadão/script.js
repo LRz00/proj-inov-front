@@ -11,14 +11,7 @@ document.getElementById('maintenanceForm').addEventListener('submit', async func
       bairro: document.getElementById('bairro').value,
       dataCriada: new Date(),
       status: "ABERTA",
-      solicitante: {
-        id: 1,
-        nome: "eu",
-        senha: "123",
-        cpf: "1234",
-        email: 'email@hotmail.com',
-        perfil: "CIDADAO"
-      }
+      solicitante: usuario,
     };
   
     try {
