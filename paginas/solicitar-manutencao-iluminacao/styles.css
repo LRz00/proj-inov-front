@@ -1,4 +1,6 @@
 /* Estilos globais */
+@import url("../../../global.css");
+
 body {
   background-color: var(--cream);
   color: var(--dark-grey);

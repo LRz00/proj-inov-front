@@ -11,15 +11,12 @@ document.getElementById('form-solicitacao').addEventListener('submit', async fun
     return; 
   }
 
-  // Simulando um usuário logado (substitua depois por sessão real, se necessário)
-  const solicitanteId = 1;
+  const solicitante = JSON.parse(localStorage.getItem('usuario'));;
 
   const payload = {
     descricao: descricao,
     dataCriada: new Date().toISOString(),
-    solicitante: {
-      id: solicitanteId
-    },
+    solicitante,
     bairro: bairro,
     nomeRua: nomeRua,
     status: "ABERTA" 
