@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitação de capinação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a href="../../cidadao-main/index.html">
+    <button id="btnVoltar" class="btn-voltar">← Voltar</button>
+  </a>
+
+  <div class="form-container">
+    <h1>Solicitar Capinação</h1>
+
+    <form id="maintenanceForm">
+      <fieldset>
+        <legend>Endereço onde será a capinação</legend>
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" name="rua" required />
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" required />
+      </fieldset>
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" rows="4" required placeholder="Descreva melhor o local da capinação..."></textarea>
+
+      <button type="submit">Enviar Solicitação</button>
+    </form>
+    
+    <p id="mensagem"></p>
+  </div>
+
+</body>
+
+</html>
