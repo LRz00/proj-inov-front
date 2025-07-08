@@ -1,38 +1,55 @@
+@import url("../../global.css");
 body {
-  background-color: #f8f9fa;
+  background-color:var(--cream);
   font-family: Arial, sans-serif;
 }
 
-h2 {
-  color: #343a40;
-}
-
-legend {
-  font-size: 1.2rem;
+h1.bem-vindo {
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #495057;
+  color: var(--dark-grey);
 }
 
-fieldset {
-  padding: 1.5rem;
-  border: 1px solid #dee2e6;
-  border-radius: 0.5rem;
-  background-color: #ffffff;
+.conecta-laranja {
+  color: var(--light-orange);
 }
 
-.invalid-feedback.d-block {
-  display: none;
+.card {
+  background-color: var(--light-grey);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.was-validated .form-check-input:invalid ~ .form-check-label,
-.was-validated .form-control:invalid {
-  border-color: #dc3545;
+.card-header {
+  background-color: var(--dark-grey) !important;
 }
 
-.was-validated .form-control:valid {
-  border-color: #198754;
+.btn-primary {
+  background-color: var(--light-orange);
+  border-color: var(--light-orange);
 }
 
-.btn {
-  min-width: 120px;
+.btn-primary:hover {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+}
+
+.btn-outline-primary {
+  color: var(--light-orange);
+  border-color: var(--light-orange);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--light-orange);
+  color: white;
+}
+
+.btn-outline-secondary {
+  color: var(--light-grey);
+  border-color: var(--light-grey);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--light-grey);
+  color: white;
 }

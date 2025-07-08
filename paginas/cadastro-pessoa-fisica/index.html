@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cadastro de Pessoa Física</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Pessoa Física</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="container d-flex flex-column align-items-center justify-content-center mt-5 mb-5">
+      <div class="text-center mb-4">
+        <h1 class="bem-vindo">Bem-vindo ao <span class="conecta-laranja">CONECTA CIDADE</span></h1>
+      </div>
 
-<body>
-  <div class="container mt-5">
-    <h2 class="mb-4">Cadastro</h2>
-    <form class="needs-validation" novalidate>
-      <!-- Informações Pessoais -->
-      <div class="card mb-4">
-        <div class="card-header bg-secondary text-white">Informações Pessoais</div>
+      <div class="card w-100" style="max-width: 700px">
+        <div class="card-header text-white bg-dark">Cadastro</div>
         <div class="card-body">
-          <div class="row">
-            <div class="col-md-6 mb-3">
+          <form class="needs-validation" novalidate>
+            <!-- Informações Pessoais -->
+            <div class="mb-3">
               <label for="nome" class="form-label">Nome completo</label>
-              <input type="text" class="form-control" id="nome" name="nome" required>
+              <input type="text" class="form-control" id="nome" name="nome" required />
               <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
             </div>
-            <div class="col-md-3 mb-3">
+
+            <div class="mb-3">
               <label for="cpf" class="form-label">CPF</label>
-              <input type="text" class="form-control" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-                maxlength="14" placeholder="000.000.000-00">
+              <input type="text" class="form-control" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" placeholder="000.000.000-00" />
               <div class="invalid-feedback">Digite um CPF válido no formato 000.000.000-00.</div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
+
+            <div class="mb-3">
               <label for="email" class="form-label">E-mail</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <input type="email" class="form-control" id="email" name="email" required />
               <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
             </div>
-            <div class="col-md-4 mb-3">
+
+            <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="senha" name="senha" required minlength="6">
+              <input type="password" class="form-control" id="senha" name="senha" required minlength="6" />
               <div class="invalid-feedback">Por favor, insira uma senha com pelo menos 6 caracteres.</div>
             </div>
-          </div>
-          <!-- Novo campo para tipo de usuário -->
-          <div class="row">
-            <div class="col-md-4 mb-3">
+
+            <div class="mb-3">
               <label for="tipoUsuario" class="form-label">Tipo de Cadastro</label>
               <select class="form-select" id="tipoUsuario" name="tipoUsuario" required>
                 <option value="" selected disabled>Selecione</option>
@@ -53,19 +52,18 @@
               </select>
               <div class="invalid-feedback">Por favor, selecione o tipo de cadastro.</div>
             </div>
-          </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+              <button type="reset" class="btn btn-outline-secondary">Limpar</button>
+              <a href="../login-cidadao/index.html" class="btn btn-outline-primary">Login</a>
+              <button type="submit" class="btn btn-primary">Salvar Cadastro</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="d-flex justify-content-end gap-2 mb-5">
-        <button type="reset" class="btn btn-secondary">Limpar</button>
-        <a href="../login-cidadao/index.html" class="btn btn-primary">Login</a>
-        <button type="submit" class="btn btn-primary">Salvar Cadastro</button>
-      </div>
-    </form>
-  </div>
+    </div>
 
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
