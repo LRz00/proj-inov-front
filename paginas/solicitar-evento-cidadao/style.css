@@ -1,0 +1,56 @@
+
+    :root {
+      --dark-grey: #292F36;
+      --light-grey: #BDC4A7;
+      --cream: #F3F9D2;
+      --light-orange: #F26419;
+      --dark-orange: #F44708;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--dark-grey);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: var(--light-grey);
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .card-header {
+      background-color: var(--light-orange);
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    .form-control:focus {
+      border-color: var(--dark-orange);
+      box-shadow: 0 0 0 0.25rem rgba(242, 100, 25, 0.25);
+    }
+
+    .btn-submit {
+      background-color: var(--light-orange);
+      border: none;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--dark-orange);
+    }

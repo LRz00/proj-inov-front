@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitação de Evento</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      Solicitação de Evento
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="tipoEvento" class="form-label">Tipo do Evento</label>
+          <select class="form-select" id="tipoEvento" name="tipoEvento" required>
+            <option value="" selected disabled>Selecione o tipo</option>
+            <option value="festa">Festa</option>
+            <option value="reuniao">Reunião</option>
+            <option value="show">Show</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="bairro" class="form-label">Bairro</label>
+          <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Digite o bairro" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="nomeRua" class="form-label">Nome da Rua</label>
+          <input type="text" class="form-control" id="nomeRua" name="nomeRua" placeholder="Digite o nome da rua" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="local" class="form-label">Local</label>
+          <input type="text" class="form-control" id="local" name="local" placeholder="Digite o local do evento" required />
+        </div>
+
+        <div class="mb-4">
+          <label for="dataEvento" class="form-label">Data e Hora do Evento</label>
+          <input type="datetime-local" class="form-control" id="dataEvento" name="dataEvento" required />
+        </div>
+
+        <button type="submit" class="btn btn-submit w-100">Enviar Solicitação</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

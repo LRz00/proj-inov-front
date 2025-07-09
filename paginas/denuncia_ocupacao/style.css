@@ -1,0 +1,22 @@
+body {
+  background-color: #F3F9D2; /* cream */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background-color: #BDC4A7; /* light-grey */
+  border-radius: 10px;
+}
+
+h2 {
+  color: #F26419; /* light-orange */
+}
+
+.btn-primary {
+  background-color: #F26419;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #F44708; /* dark-orange */
+}
