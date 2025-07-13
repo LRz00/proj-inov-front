@@ -19,3 +19,8 @@
     document.getElementById("naturalidade").textContent = "São Paulo - SP";
     document.getElementById("telefone").textContent = "(11) 11111-1111";
   });
+
+  function logout() {
+    localStorage.removeItem("usuario");
+    window.location.href = "../login-cidadao/index.html";
+  }

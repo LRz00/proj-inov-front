@@ -61,6 +61,15 @@ h2 {
     color: #f4f4f4;
 }
 
+.logout-btn button {
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    background-color: #f15a0a;
+    color: white;
+    font-weight: bold;
+}
+
 @media (max-width: 500px) {
     header {
     font-size: 1rem;
