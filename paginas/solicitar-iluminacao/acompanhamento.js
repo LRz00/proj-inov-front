@@ -16,7 +16,7 @@ estrelas.forEach((estrela, index) => {
     notaTexto.textContent = `Você avaliou este serviço com ${nota} estrela${nota > 1 ? 's' : ''}.`;
 
     try {
-      const resposta = await fetch(`https://seu-endereco.com/api/solicitacao-eventos/${ID_SERVICO}/avaliar?nota=${nota}`, {
+      const resposta = await fetch(`http://localhost:8080/api/solicitacao-eventos/avaliar?nota=${nota}`, {
         method: 'POST'
       });
 
