@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seu Perfil</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <a href="../cidadao-main/"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home" /></a>
-    Seu Perfil
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seu Perfil</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../cidadao-main/"
+        ><img
+          src="https://img.icons8.com/ios-filled/50/ffffff/home.png"
+          alt="Home"
+      /></a>
+      Seu Perfil
+    </header>
 
-  <main>
-    <h2>Dados Pessoais</h2>
+    <main>
+      <h2>Dados Pessoais</h2>
 
-    <div class="info-group">
-      <div class="info-label">Nome:</div>
-      <div class="info-value" id="nome">Carregando...</div>
-    </div>
+      <div class="info-group">
+        <div class="info-label">Nome:</div>
+        <div class="info-value" id="nome">Carregando...</div>
+      </div>
 
-    <div class="info-group">
-      <div class="info-label">Nascimento:</div>
-      <div class="info-value" id="nascimento">Carregando...</div> <!-- mock fixo -->
-    </div>
+      <div class="info-group">
+        <div class="info-label">Nascimento:</div>
+        <div class="info-value" id="nascimento">Carregando...</div>
+        <!-- mock fixo -->
+      </div>
 
-    <div class="info-group">
-      <div class="info-label">Naturalidade:</div>
-      <div class="info-value" id="naturalidade">Carregando...</div> <!-- mock fixo -->
-    </div>
+      <div class="info-group">
+        <div class="info-label">Naturalidade:</div>
+        <div class="info-value" id="naturalidade">Carregando...</div>
+        <!-- mock fixo -->
+      </div>
 
-    <div class="info-group">
-      <div class="info-label">Telefone:</div>
-      <div class="info-value" id="telefone">Carregando...</div> <!-- mock fixo -->
-    </div>
+      <div class="info-group">
+        <div class="info-label">Telefone:</div>
+        <div class="info-value" id="telefone">Carregando...</div>
+        <!-- mock fixo -->
+      </div>
 
-    <div class="info-group">
-      <div class="info-label">E-mail:</div>
-      <div class="info-value" id="email">Carregando...</div>
-    </div>
+      <div class="info-group">
+        <div class="info-label">E-mail:</div>
+        <div class="info-value" id="email">Carregando...</div>
+      </div>
+      <div class="sol-btn">
+        <a href="acompanhamento-main/index.html" class="button-link"
+          >Minhas Solicitações</a
+        >
+      </div>
 
-    <div class="logout-btn">
-      <button onclick="logout()">Sair</button>
-    </div>
-  </main>
+      <div class="logout-btn">
+        <button onclick="logout()">Sair</button>
+      </div>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
