@@ -88,6 +88,9 @@ main {
     background-color: var(--cream);
     border-right: 1px solid var(--light-grey);
     padding: 1rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .left-menu h2 {
@@ -107,6 +110,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid black;
 }
 
 .category:hover,
@@ -128,6 +132,7 @@ main {
     color: var(--dark-grey);
     border-radius: 4px;
     cursor: pointer;
+    border: 1px solid black;
 }
 
 .subcategory button:hover {
@@ -138,6 +143,7 @@ main {
 .right-content {
     flex: 1;
     padding: 2rem;
+    border: 1px solid black;
 }
 
 #default-title {
