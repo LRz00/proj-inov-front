@@ -23,7 +23,7 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
   };
 
   try {
-    const response = await fetch("/api/denuncias", {
+    const response = await fetch("/denuncias", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -43,4 +43,20 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
   } catch (error) {
     alert("Erro de conexão com o servidor: " + error.message);
   }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("http://localhost:8080/denuncias/1/media") // ou o ID correto
+    .then(res => {
+      if (!res.ok) throw new Error("Erro ao obter média");
+      return res.json(); // isso ainda é correto, pois é um double serializado como JSON
+    })
+    .then(media => {
+      document.getElementById("media-valor").textContent = `Média de avaliações: ${media.toFixed(1)}`;
+    })
+    .catch(erro => {
+      console.error("Erro ao carregar média:", erro);
+      document.getElementById("media-valor").textContent = "Não disponível";
+    });
 });

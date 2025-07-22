@@ -136,3 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
             container.innerHTML = "<p>Erro ao carregar ocorrências.</p>";
         });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("http://localhost:8080/solicitacao-man-vias-publica/1/media")
+    .then(res => {
+      if (!res.ok) throw new Error("Erro ao obter média");
+      return res.json();
+    })
+    .then(dados => {
+      document.getElementById("media-valor").textContent = `Média de avaliações: ${dados.toFixed(1)}`;
+    })
+    .catch(erro => {
+      console.error("Erro ao carregar média:", erro);
+      document.getElementById("media-valor").textContent = "Não disponível";
+    });
+});

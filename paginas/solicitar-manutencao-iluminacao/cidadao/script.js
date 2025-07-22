@@ -46,3 +46,19 @@ document.getElementById('form-solicitacao').addEventListener('submit', async fun
     alert('Erro de conexão com o servidor.');
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("http://localhost:8080/solicitacao-man-iluminacao-publica/1/media")
+    .then(res => {
+      if (!res.ok) throw new Error("Erro ao obter média");
+      return res.json();
+    })
+    .then(dados => {
+      document.getElementById("media-valor").textContent = `Média de avaliações: ${dados.toFixed(1)}`;
+    })
+    .catch(erro => {
+      console.error("Erro ao carregar média:", erro);
+      document.getElementById("media-valor").textContent = "Não disponível";
+    });
+});
