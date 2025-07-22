@@ -4,7 +4,7 @@
 
     if (!usuarioSalvo) {
       alert("Sessão expirada. Faça login novamente.");
-      window.location.href = "../login/index.html";
+      window.location.href = "../login-cidadao/index.html";
       return;
     }
 

@@ -1,31 +1,37 @@
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+function toggleCategory(header) {
+    const next = header.nextElementSibling;
+    const arrow = header.querySelector('.arrow');
+    const isOpen = next.style.display === 'flex';
 
-let currentIndex = 0;
+    // Fecha todas
+    document.querySelectorAll('.subcategory').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
 
-function updateCarousel() {
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  dots.forEach((dot, i) =>
-    dot.classList.toggle('active', i === currentIndex)
-  );
+    if (!isOpen) {
+        next.style.display = 'flex';
+        arrow.classList.add('open');
+        header.classList.add('active');
+    }
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateCarousel();
-});
+function showService(id) {
+    document.querySelectorAll('.service-details').forEach(d => d.classList.remove('active'));
+    const el = document.getElementById(id);
+    if (el) el.classList.add('active');
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateCarousel();
-});
+    // Oculta o texto padrão
+    document.getElementById("default-text").style.display = "none";
+    document.getElementById("default-title").style.display = "none";
 
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    currentIndex = i;
-    updateCarousel();
-  });
-});
+    // Adiciona o conteúdo dinâmico
+    const content = `
+        <h3>${titulo}</h3>
+        <p>${descricao}</p>
+        <a href="${link}">
+        <button class="access-button">Acessar Serviço</button>
+        </a>
+    `;
+
+    document.getElementById("service-details").innerHTML = content;
+}
