@@ -11,18 +11,23 @@ document.getElementById('form-solicitacao').addEventListener('submit', async fun
     return; 
   }
 
-  const solicitante = JSON.parse(localStorage.getItem('usuario'));;
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+  if (!usuario || !usuario.id) {
+    alert('Usuário não autenticado ou inválido.');
+    return;
+  }
 
   const payload = {
     descricao: descricao,
     dataCriada: new Date().toISOString(),
-    solicitante,
+    solicitante: { id: usuario.id },  // envia só o id do solicitante
     bairro: bairro,
     nomeRua: nomeRua,
-    status: "ABERTA" 
+    status: "ABERTA"  // assumindo que "ABERTA" é um valor válido para o enum do backend
   };
 
-  console.log(JSON.stringify(payload));
+  console.log("Payload enviado:", JSON.stringify(payload));
 
   try {
     const response = await fetch('http://localhost:8080/solicitacao-man-iluminacao-publica', {
@@ -45,20 +50,4 @@ document.getElementById('form-solicitacao').addEventListener('submit', async fun
     console.error('Erro de rede:', error);
     alert('Erro de conexão com o servidor.');
   }
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:8080/solicitacao-man-iluminacao-publica/1/media")
-    .then(res => {
-      if (!res.ok) throw new Error("Erro ao obter média");
-      return res.json();
-    })
-    .then(dados => {
-      document.getElementById("media-valor").textContent = `Média de avaliações: ${dados.toFixed(1)}`;
-    })
-    .catch(erro => {
-      console.error("Erro ao carregar média:", erro);
-      document.getElementById("media-valor").textContent = "Não disponível";
-    });
 });
