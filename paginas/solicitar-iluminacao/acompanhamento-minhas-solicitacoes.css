@@ -1,0 +1,66 @@
+/* ACOMPANHAMENTO  DAS SOLICITAÇÕES */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #E87722;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.avaliacao-servico {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.avaliacao-servico h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.estrelas {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.estrela {
+    color: #ccc;
+    transition: color 0.2s ease-in-out;
+}
+
+.estrela:hover,
+.estrela:hover ~ .estrela {
+    color: #ccc !important;
+}
+
+.estrela:hover,
+.estrela:hover ~ .estrela {
+    color: #f1c40f !important;
+}
