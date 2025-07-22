@@ -1,63 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Conecta Irecê</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
+
+<header class="header">
   <div class="left">
     <a href="index.html"><span class="menu-icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home" /></span></a>
     <h1>Home</h1>
   </div>
   <div class="right">
-    <strong>Usuario</strong><br /> <!--WILLIAM, MUDAR USERNAME AQUI-->
-    <span><a href="../perfil-usuario/index.html">Perfil</a></span>
+    <strong>Olá, Usuario</strong><br /> <!--WILLIAM, MUDAR USERNAME AQUI-->
+    <span><a href="../perfil-usuario/index.html">Ver Perfil</a></span>
   </div>
 </header>
 
-  <main>
-    <section class="carousel-section">
-      <h2>Novidades</h2>
-      <div class="carousel">
-        <button class="prev">&#8249;</button>
-        <div class="carousel-track">
-          <div class="carousel-slide active">Slide 1</div>
-          <div class="carousel-slide">Slide 2</div>
-          <div class="carousel-slide">Slide 3</div>
+<main>
+  <div class="panel">
+
+    <div class="left-menu">
+      <p class="titles">Menu</p>
+
+      <!-- CATEGORIA 1 -->
+      <div class="category" onclick="toggleCategory(this)">
+        🌳 Árvores
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('plantio')">Solicitar Plantio</button>
+        <button onclick="showService('retirada')">Solicitar Retirada</button>
+      </div>
+
+      <!-- CATEGORIA 2 -->
+      <div class="category" onclick="toggleCategory(this)">
+        💡 Iluminação
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('iluminacao')">Solicitar Iluminação</button>
+      </div>
+
+      <!-- CATEGORIA 3 -->
+      <div class="category" onclick="toggleCategory(this)">
+        🚧 Manutenção de Vias
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('reparo')">Solicitar Reparo de Vias</button>
+      </div>
+
+      <!-- CATEGORIA 4 -->
+      <div class="category" onclick="toggleCategory(this)">
+        🎉 Eventos
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('evento')">Solicitar Permissão de Evento</button>
+      </div>
+
+      <!-- CATEGORIA 5 -->
+      <div class="category" onclick="toggleCategory(this)">
+        🚨 Denúncias
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('denuncia')">Registrar Denúncia</button>
+      </div>
+
+      <!-- CATEGORIA 6 -->
+      <div class="category" onclick="toggleCategory(this)">
+        🐾 Animais
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('remocao-animal')">Solicitar Remoção de Animal Morto</button>
+      </div>
+
+      
+      <!-- CATEGORIA 99 -->
+      <!--<div class="category" onclick="toggleCategory(this)">
+        📢 Outros
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('denuncia')">Fazer Denúncia</button>
+        <button onclick="showService('evento')">Permissão de Evento</button>
+      </div>-->
+    </div>
+    
+
+    <div class="right-content">
+      <!-- CONTEÚDOS -->
+        <div class="right-panel">
+            <p class="titles" id="default-title">Conecta Irecê - Serviços</p>
+            <p id="default-text">
+                Verifique o <strong>"Menu"</strong> e selecione um serviço. Após isso, clique nas opções disponíveis se deseja solicitar ou verificar mais detalhes sobre um serviço em específico.
+            </p>
+            <div id="service-details">
+                <!-- Conteúdo dinâmico será exibido aqui -->
+            </div>
         </div>
-        <button class="next">&#8250;</button>
-      </div>
-      <div class="carousel-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </section>
 
-    <section class="services-section">
-      <h2>Serviços</h2>
-      <div class="services-grid">
-        <a href="../solicitar-plantio-arvore/cidadão/index.html">Solicitar Plantio de Árvore 🌳</a>
-        <a href="../solicitar-remocao-arvore-caida/cidadão/index.html">Solicitar Retirada de Árvore 🌳</a>
-        <a href="../solicitar-manutencao-iluminacao/cidadão/index.html">Solicitar Iluminação Pública 💡</a>
-        <a href="../solicitar-manutencao-vias//cidadão/index.html">Solicitar Manutenção de Via Pública 🚒</a>
-        <a href="../solicitar-remocao-animal-morto/cidadão/index.html">Solicitar Retirar Animais Mortos 🐄</a>
-        <a href="../solicitar-evento-cidadao/index.html">Solicitar Permissão para Eventos 🎉</a>
-        <a href="../denuncia_ocupacao/index.html">Denúncias ⚠️</a>
-        <a href="#">...</a>
-        <a href="#">...</a>
-        <a href="#">...</a>
+      <div id="plantio" class="service-details">
+        <h3>🌱 Plantio de Árvore</h3>
+        <p>Solicite o plantio de árvores em áreas públicas com o objetivo de ampliar áreas verdes e promover a sustentabilidade urbana.</p>
+        <a href="../solicitar-plantio-arvore/cidadão/index.html">Acessar Serviço</a>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>Projeto de Inovação<br><strong>IFBA - IRECÊ</strong></p>
-  </footer>
+      <div id="retirada" class="service-details">
+        <h3>🪓 Retirada de Árvore</h3>
+        <p>Requisição de retirada de árvore em risco de queda ou em local impróprio, garantindo a segurança da população.</p>
+        <a href="../solicitar-remocao-arvore-caida/cidadão/index.html">Acessar Serviço</a>
+      </div>
 
-  <script src="script.js"></script>
+      <div id="iluminacao" class="service-details">
+        <h3>💡 Solicitação de Iluminação</h3>
+        <p>Solicite a instalação de iluminação pública em locais escuros para aumentar a visibilidade e segurança urbana.</p>
+        <a href="../solicitar-manutencao-iluminacao/cidadao/index.html">Acessar Serviço</a>
+      </div>
+
+      <div id="reparo" class="service-details">
+        <h3>🛠️ Solicitar Reparo em Vias</h3>
+        <p>Solicitação de reparos estruturais em ruas, calçadas ou avenidas em situação crítica ou com risco de acidentes.</p>
+        <a href="../solicitar-manutencao-vias/cidadão/index.html">Acessar Serviço</a>
+      </div>
+
+      <div id="denuncia" class="service-details">
+        <h3>🚨 Fazer Denúncia</h3>
+        <p>Canal aberto para denúncia de irregularidades ambientais, sociais ou urbanas com total sigilo garantido.</p>
+        <a href="../denuncia_ocupacao/cidadao/index.html">Acessar Serviço</a>
+      </div>
+
+      <div id="evento" class="service-details">
+        <h3>📅 Permissão para Eventos</h3>
+        <p>Solicite autorização para realizar eventos públicos respeitando normas de uso de espaços e segurança.</p>
+        <a href="../solicitar-evento/cidadao/index.html">Acessar Serviço</a>
+      </div>
+
+      <div id="remocao-animal" class="service-details">
+        <h3>🐾 Solicitar Remoção de Animal Morto</h3>
+        <p>Você pode solicitar a remoção de um animal morto em uma área pública.</p>
+        <a href="../solicitar-remocao-animal-morto/cidadão/index.html">Acessar Serviço</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+    <p>Projeto de Inovação (2025.1)<br><strong>IFBA - IRECÊ</strong></p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>

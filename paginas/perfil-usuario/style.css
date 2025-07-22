@@ -71,7 +71,16 @@ h2 {
 }
 
 .sol-btn {
-    margin-top: 1rem;
+    margin: 2rem 0rem;
+}
+
+.sol-btn a {
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    background-color: #f15a0a;
+    color: white;
+    font-weight: bold;
 }
 
 .button-link {
