@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const resposta = await fetch('https://suaapi.com/api/solicitacoes', { // Substitua pela URL correta
+      const resposta = await fetch('http://localhost:8080/solicitacao-enterro-abertura-cova', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

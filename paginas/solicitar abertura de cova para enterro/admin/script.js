@@ -1,6 +1,6 @@
 async function listarOcorrencias() {
   try {
-    const resposta = await fetch('https://api.com/api/solicitacoes'); // Altere para a URL real da sua API
+    const resposta = await fetch('http://localhost:8080/solicitacao-enterro-abertura-cova');
     const dados = await resposta.json();
 
     const container = document.getElementById('lista-ocorrencias');

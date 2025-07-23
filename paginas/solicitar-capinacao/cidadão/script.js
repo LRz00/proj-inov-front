@@ -15,7 +15,7 @@
     };
 
     try {
-      const resposta = await fetch('https://suaapi.com/api/capina', { // Substitua pela URL da sua API
+      const resposta = await fetch('http://localhost:8080/solicitacao-capinacao', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
