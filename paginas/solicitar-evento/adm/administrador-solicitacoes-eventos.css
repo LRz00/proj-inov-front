@@ -2,22 +2,22 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 40px;
-  background: linear-gradient(135deg, #f9f9f9, #e3f2fd);
+  background: #f7f7f7; /* tom claro neutro, substitui o verde */
 }
 
 .container {
   max-width: 960px;
   margin: auto;
-  background-color: white;
+  background-color: white; /* fundo branco para o container */
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra suave */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #333;
+  color: #292F36; /* texto escuro do exemplo */
 }
 
 table {
@@ -32,8 +32,9 @@ th, td {
 }
 
 th {
-  background-color: #007bff;
+  background-color: #F26419; /* laranja do Figma */
   color: white;
+  font-weight: bold;
 }
 
 button {
@@ -43,14 +44,24 @@ button {
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 button:first-child {
-  background-color: #28a745; /* verde */
+  background-color: #F26419; /* botão Aprovar em laranja */
+}
+
+button:first-child:hover {
+  background-color: #d45714; /* tom mais escuro no hover */
 }
 
 button:last-child {
-  background-color: #dc3545; /* vermelho */
+  background-color: #C13232; /* vermelho bonito para Negar */
+}
+
+button:last-child:hover {
+  background-color: #a32a2a; /* escurecendo no hover */
 }
 
 @media (max-width: 768px) {

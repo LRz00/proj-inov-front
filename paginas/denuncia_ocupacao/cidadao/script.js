@@ -1,3 +1,6 @@
+// Script para o formulário de denúncias e média de avaliações
+
+// Envia a denúncia via fetch para o backend
 document.getElementById('denuncia-form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
@@ -6,15 +9,17 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
   const denuncia = document.getElementById('denuncia').value;
   const solicitanteId = document.getElementById('solicitante').value;
 
+  // Validação dos campos
   if (!descricao || !prioridade || !denuncia || !solicitanteId) {
     alert('Por favor, preencha todos os campos.');
     return;
   }
 
+  // Monta objeto para enviar
   const data = {
     descricao: descricao,
     dataCriada: new Date().toISOString(),
-    status: "PENDENTE", 
+    status: "PENDENTE",
     solicitante: {
       id: parseInt(solicitanteId)
     },
@@ -23,6 +28,7 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
   };
 
   try {
+    // Envia para a API (ajuste a URL conforme backend)
     const response = await fetch("/denuncias", {
       method: "POST",
       headers: {
@@ -39,18 +45,17 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
     } else {
       alert("Erro ao enviar denúncia: " + (result.message || "desconhecido"));
     }
-
   } catch (error) {
     alert("Erro de conexão com o servidor: " + error.message);
   }
 });
 
-
+// Carrega média de avaliações na página
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:8080/denuncias/1/media") // ou o ID correto
+  fetch("http://localhost:8080/denuncias/1/media") // Ajuste o ID conforme necessário
     .then(res => {
       if (!res.ok) throw new Error("Erro ao obter média");
-      return res.json(); // isso ainda é correto, pois é um double serializado como JSON
+      return res.json();
     })
     .then(media => {
       document.getElementById("media-valor").textContent = `Média de avaliações: ${media.toFixed(1)}`;

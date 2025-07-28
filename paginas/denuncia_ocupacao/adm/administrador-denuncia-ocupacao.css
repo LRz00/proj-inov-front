@@ -1,10 +1,14 @@
+/* administrador-denuncia-ocupacao.css */
+
+/* Fundo cinza claro */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 40px;
-  background: linear-gradient(135deg, #fff9f1, #ffe4d9);
+  background-color: #f3f3f3; /* Cinza claro do Figma */
 }
 
+/* Caixa branca centralizada */
 .container {
   max-width: 960px;
   margin: auto;
@@ -14,28 +18,38 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+/* Título laranja abóbora */
+.titulo {
   text-align: center;
   margin-bottom: 30px;
-  color: #444;
+  color: #e87722;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-table {
+/* Tabela 100% largura */
+.tabela {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
+/* Cabeçalho com fundo laranja e texto branco */
+.tabela thead th {
+  background-color: #e87722;
+  color: white;
   padding: 12px;
-  border-bottom: 1px solid #ccc;
   text-align: center;
 }
 
-th {
-  background-color: #ff7b00;
-  color: white;
+/* Células com borda inferior */
+.tabela tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-size: 1rem;
 }
 
+/* Botões */
 button {
   padding: 6px 12px;
   margin: 2px;
@@ -43,30 +57,44 @@ button {
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
 }
 
-button:first-child {
-  background-color: #28a745; /* verde */
+/* Botão Aprovar - laranja */
+.btn-aprovar {
+  background-color: #e87722;
 }
 
-button:last-child {
-  background-color: #dc3545; /* vermelho */
+.btn-aprovar:hover {
+  background-color: #d0691f;
 }
 
+/* Botão Negar - laranja escuro */
+.btn-negar {
+  background-color: #d0691f;
+}
+
+.btn-negar:hover {
+  background-color: #a45317;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 20px;
   }
-
   .container {
     padding: 20px;
   }
-
-  table {
-    font-size: 14px;
+  .tabela tbody td,
+  .tabela thead th {
+    font-size: 0.85rem;
+    padding: 8px;
   }
-
   button {
-    padding: 4px 8px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
   }
 }

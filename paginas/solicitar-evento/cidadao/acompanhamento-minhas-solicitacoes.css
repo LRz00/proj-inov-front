@@ -1,14 +1,16 @@
-/* ACOMPANHAMENTO  DAS SOLICITAÇÕES */
+/* Estilo para acompanhamento do cidadão */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 20px;
+    color: #292F36;
 }
 
 h1 {
-    color: #333;
+    color: #292F36;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 table {
@@ -18,10 +20,11 @@ table {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 thead {
-    background-color: #E87722;
+    background-color: #F26419;
     color: white;
 }
 
@@ -42,7 +45,7 @@ th, td {
 
 .avaliacao-servico h2 {
     margin-bottom: 10px;
-    color: #333;
+    color: #292F36;
 }
 
 .estrelas {
@@ -57,10 +60,22 @@ th, td {
 
 .estrela:hover,
 .estrela:hover ~ .estrela {
-    color: #ccc !important;
+    color: #f1c40f !important;
 }
 
-.estrela:hover,
-.estrela:hover ~ .estrela {
-    color: #f1c40f !important;
+/* Botão Voltar */
+.botao-voltar {
+    background-color: #F26419;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-voltar:hover {
+    background-color: #d6520f;
 }

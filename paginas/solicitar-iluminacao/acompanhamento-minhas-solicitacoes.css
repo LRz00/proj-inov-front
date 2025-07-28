@@ -1,4 +1,4 @@
-/* ACOMPANHAMENTO  DAS SOLICITAÇÕES */
+/* ACOMPANHAMENTO DAS SOLICITAÇÕES */
 
 body {
     font-family: Arial, sans-serif;
@@ -21,7 +21,7 @@ table {
 }
 
 thead {
-    background-color: #E87722;
+    background-color: #E87722; /* laranja abóbora */
     color: white;
 }
 
@@ -57,10 +57,22 @@ th, td {
 
 .estrela:hover,
 .estrela:hover ~ .estrela {
-    color: #ccc !important;
+    color: #f1c40f !important; /* amarelo para estrelas hover */
 }
 
-.estrela:hover,
-.estrela:hover ~ .estrela {
-    color: #f1c40f !important;
+/* Botão Voltar laranja */
+button {
+    background-color: #E87722;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #d0691f;
 }

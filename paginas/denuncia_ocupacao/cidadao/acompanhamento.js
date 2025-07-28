@@ -1,32 +1,64 @@
-const estrelas = document.querySelectorAll(".estrela");
-const notaTexto = document.getElementById("nota-selecionada");
+// Script para preencher tabela e avaliação por estrelas na tela de acompanhamento do cidadão
 
-// ID simbólico usado para avaliar o serviço como um todo
-const ID_SERVICO = 9999;
+// Dados simulados de solicitações do cidadão
+const minhasSolicitacoes = [
+  {
+    id: 1,
+    tipo: "Denúncia de Ocupação",
+    status: "Em Análise",
+    ultimaAtualizacao: "20/07/2025"
+  },
+  {
+    id: 2,
+    tipo: "Solicitação de Denúncia",
+    status: "Finalizado",
+    ultimaAtualizacao: "18/07/2025"
+  }
+];
 
-estrelas.forEach((estrela, index) => {
-  estrela.addEventListener("click", async () => {
-    const nota = index + 1;
-
-    // Visual: pintar as estrelas
-    estrelas.forEach((el, i) => {
-      el.style.color = i < nota ? "#f1c40f" : "#ccc";
-    });
-
-    notaTexto.textContent = `Você avaliou este serviço com ${nota} estrela${nota > 1 ? 's' : ''}.`;
-
-    try {
-      const resposta = await fetch(`http://localhost:8080/denuncias/1/avaliar?nota=${nota}`, {
-        method: 'POST'
-      });
-
-      if (resposta.ok) {
-        console.log("Avaliação enviada com sucesso!");
-      } else {
-        console.error("Erro ao enviar avaliação:", resposta.status);
-      }
-    } catch (erro) {
-      console.error("Erro de rede ao enviar avaliação:", erro);
-    }
+// Preenche a tabela com as solicitações
+function preencherTabelaCidadao() {
+  const tbody = document.querySelector("tbody");
+  tbody.innerHTML = "";
+  minhasSolicitacoes.forEach(sol => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${sol.id}</td>
+      <td>${sol.tipo}</td>
+      <td>${sol.status}</td>
+      <td>${sol.ultimaAtualizacao}</td>
+    `;
+    tbody.appendChild(tr);
   });
+}
+
+// Avaliação por estrelas
+const estrelas = document.querySelectorAll(".estrela");
+const notaSelecionada = document.getElementById("nota-selecionada");
+
+// Função para mudar cor das estrelas clicadas
+function marcarEstrelas(nota) {
+  estrelas.forEach((estrela, i) => {
+    estrela.style.color = i < nota ? "#f1c40f" : "#ccc"; // amarelo ou cinza
+  });
+}
+
+// Envio da avaliação (simulado)
+function enviarAvaliacao(nota) {
+  alert(`Você avaliou o serviço com ${nota} estrela${nota > 1 ? 's' : ''}. Obrigado!`);
+  notaSelecionada.textContent = `Você avaliou este serviço com ${nota} estrela${nota > 1 ? 's' : ''}.`;
+}
+
+// Adiciona evento de clique nas estrelas
+estrelas.forEach((estrela, index) => {
+  estrela.addEventListener("click", () => {
+    const nota = index + 1;
+    marcarEstrelas(nota);
+    enviarAvaliacao(nota);
+  });
+});
+
+// Executa o preenchimento das tabelas ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+  preencherTabelaCidadao();
 });

@@ -1,13 +1,13 @@
-/* ACOMPANHAMENTO  DAS SOLICITAÇÕES */
+/* Estilo para acompanhamento de solicitações - ADM */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f3f9d2;
     padding: 20px;
 }
 
 h1 {
-    color: #333;
+    color: #292F36;
     margin-bottom: 20px;
 }
 
@@ -21,7 +21,7 @@ table {
 }
 
 thead {
-    background-color: #E87722;
+    background-color: #F26419;
     color: white;
 }
 
@@ -32,7 +32,7 @@ th, td {
 }
 
 button {
-    background-color: #E87722;
+    background-color: #F26419;
     color: white;
     padding: 6px 12px;
     margin: 2px;
@@ -42,5 +42,5 @@ button {
 }
 
 button:hover {
-    background-color: #d0691f;
+    background-color: #F44708;
 }

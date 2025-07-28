@@ -1,88 +1,109 @@
+/* Fundo branco com texto escuro */
 body {
-    background-color: #f8f9fa; /* Fundo cinza bem claro */
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    color: #292F36;
 }
 
+/* Container centralizado, com sombra e cantos arredondados */
 .container {
     background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     max-width: 1200px;
     margin: 0 auto;
-    overflow-x: auto; /* Caso a tabela fique larga em telas pequenas */
+    overflow-x: auto;
 }
 
+/* Título centralizado laranja escuro */
 h1 {
     text-align: center;
-    color: #333;
+    color: #F26419;
     margin-bottom: 30px;
     font-size: 28px;
 }
 
+/* Tabela com bordas e largura total */
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ccc; /* Borda externa da tabela */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
+/* Cabeçalho laranja com texto branco */
+thead {
+    background-color: #F26419 !important;
+}
+
+thead th {
+    color: white !important;
+    font-weight: 700;
+    padding: 18px 14px;
+    text-align: left;
+}
+
+/* Células com borda, espaçamento e cor do texto */
 th, td {
-    padding: 18px 14px; /* Espaçamento interno maior */
-    border: 1px solid #ccc; /* Bordas internas */
+    padding: 18px 14px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
     vertical-align: middle;
     font-size: 16px;
+    color: #292F36;
 }
 
-th {
-    background-color: #e9ecef; /* Cabeçalho cinza claro */
-    color: #333;
-    font-weight: bold;
+/* Linhas pares com fundo cinza muito claro */
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
 }
 
-tr:nth-child(even) td {
-    background-color: #f9f9f9; /* Faixa de cinza em linhas pares */
+/* Hover em linhas com fundo laranja claro */
+tbody tr:hover {
+    background-color: #fff1e0;
 }
 
-tr:hover td {
-    background-color: #f1f1f1; /* Destaque quando passa o mouse */
-}
-
-/* Responsividade para celular e telas pequenas */
+/* Responsividade: tabela vira bloco no mobile */
 @media (max-width: 768px) {
     table, thead, tbody, th, td, tr {
         display: block;
     }
 
     thead {
-        display: none; /* Some com o cabeçalho em telas pequenas */
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 1.25rem;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        padding: 12px;
     }
 
     td {
         border: none;
         position: relative;
         padding-left: 50%;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #ccc;
+        text-align: right;
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
+    /* Mostra o label na frente do dado para mobile */
     td:before {
         position: absolute;
         top: 12px;
-        left: 12px;
+        left: 14px;
+        width: 45%;
         white-space: nowrap;
-        font-weight: bold;
-        color: #333;
+        font-weight: 700;
+        color: #F26419;
+        text-align: left;
+        content: attr(data-label);
     }
-
-    /* Rótulos que aparecem antes dos dados no mobile */
-    td:nth-of-type(1):before { content: "ID"; }
-    td:nth-of-type(2):before { content: "Data"; }
-    td:nth-of-type(3):before { content: "Nome do Cidadão"; }
-    td:nth-of-type(4):before { content: "Endereço"; }
-    td:nth-of-type(5):before { content: "Tipo de Problema"; }
-    td:nth-of-type(6):before { content: "Descrição"; }
-    td:nth-of-type(7):before { content: "Status"; }
 }

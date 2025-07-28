@@ -1,46 +1,140 @@
-/* ACOMPANHAMENTO  DAS SOLICITAÇÕES */
+/* acompanhamento-solicitacoes.css */
 
+/* Fundo cinza claro */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f3f3f3; /* Cinza claro, suave e neutro */
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
+/* Caixa branca centralizada com sombra */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+/* Título laranja abóbora */
+.titulo {
+  color: #e87722; /* Cor laranja abóbora */
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
 }
 
-thead {
-    background-color: #E87722;
-    color: white;
+/* Tabela ocupa toda largura da caixa */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th, td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+/* Cabeçalho da tabela em laranja abóbora com texto branco */
+.tabela thead {
+  background-color: #e87722;
+  color: white;
 }
 
+/* Células da tabela com padding e borda inferior leve */
+.tabela th,
+.tabela td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Fundo alternado para linhas pares, suavizando a leitura */
+.tabela tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Highlight sutil na linha ao passar o mouse */
+.tabela tbody tr:hover {
+  background-color: #ffe8d4; /* Laranja muito suave */
+}
+
+/* Estilo geral dos botões */
 button {
-    background-color: #E87722;
-    color: white;
-    padding: 6px 12px;
-    margin: 2px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  border: none;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #d0691f;
+/* Botão Aprovar - laranja forte */
+.btn-aprovar {
+  background-color: #e87722;
+}
+
+.btn-aprovar:hover {
+  background-color: #d0691f;
+}
+
+/* Botão Finalizar - laranja médio */
+.btn-finalizar {
+  background-color: #f26419;
+}
+
+.btn-finalizar:hover {
+  background-color: #c75417;
+}
+
+/* Botão Cancelar - laranja mais escuro */
+.btn-cancelar {
+  background-color: #d0691f;
+}
+
+.btn-cancelar:hover {
+  background-color: #a45317;
+}
+
+/* Botão Em Análise - laranja abóbora */
+.btn-analise {
+  background-color: #e87722;
+}
+
+.btn-analise:hover {
+  background-color: #d0691f;
+}
+
+/* Botão Voltar - laranja abóbora com padding maior */
+.btn-voltar {
+  background-color: #e87722;
+  padding: 12px 25px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.btn-voltar:hover {
+  background-color: #d0691f;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  .tabela th,
+  .tabela td {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+  }
+  button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
 }
