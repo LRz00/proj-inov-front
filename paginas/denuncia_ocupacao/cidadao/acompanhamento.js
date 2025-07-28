@@ -1,36 +1,43 @@
-// Script para preencher tabela e avaliação por estrelas na tela de acompanhamento do cidadão
+async function carregarDenuncias() {
+  try {
+    const response = await fetch("http://localhost:8080/denuncias");
+    const data = await response.json();
+    const denuncias = data.content; // se for paginado
 
-// Dados simulados de solicitações do cidadão
-const minhasSolicitacoes = [
-  {
-    id: 1,
-    tipo: "Denúncia de Ocupação",
-    status: "Em Análise",
-    ultimaAtualizacao: "20/07/2025"
-  },
-  {
-    id: 2,
-    tipo: "Solicitação de Denúncia",
-    status: "Finalizado",
-    ultimaAtualizacao: "18/07/2025"
+    const tbody = document.querySelector("table tbody");
+    tbody.innerHTML = "";
+
+    denuncias.forEach(d => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${d.id}</td>
+        <td>${mapaDenuncia[d.denuncia] || d.denuncia}</td>
+        <td>${mapaStatus[d.status] || d.status}</td>
+        <td>${d.dataConcluida ? new Date(d.dataConcluida).toLocaleDateString() : "Não concluída"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+  } catch (err) {
+    console.error("Erro ao carregar denúncias:", err);
   }
-];
-
-// Preenche a tabela com as solicitações
-function preencherTabelaCidadao() {
-  const tbody = document.querySelector("tbody");
-  tbody.innerHTML = "";
-  minhasSolicitacoes.forEach(sol => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${sol.id}</td>
-      <td>${sol.tipo}</td>
-      <td>${sol.status}</td>
-      <td>${sol.ultimaAtualizacao}</td>
-    `;
-    tbody.appendChild(tr);
-  });
 }
+
+const mapaDenuncia = {
+  CONSTRUCAO_IRREGULAR: "Construção Irregular",
+  OCUPACAO_AREA_PUBLICA: "Ocupação de Área Pública",
+  PUBLICIDADE: "Publicidade",
+  FUNCIONAMENTO_EMPRESA: "Funcionamento de Empresa"
+};
+
+const mapaStatus = {
+  PENDENTE: "Pendente",
+  EM_ANALISE: "Em Análise",
+  FINALIZADO: "Finalizado"
+};
+
+document.addEventListener("DOMContentLoaded", carregarDenuncias);
+
 
 // Avaliação por estrelas
 const estrelas = document.querySelectorAll(".estrela");
