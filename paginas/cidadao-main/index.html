@@ -1,161 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Conecta Irecê</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-<header class="header">
-  <div class="left">
-    <a href="index.html"><span class="menu-icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home" /></span></a>
-    <h1>Home</h1>
-  </div>
-  <div class="right">
-    <strong>Olá, Usuario</strong><br /> <!--WILLIAM, MUDAR USERNAME AQUI-->
-    <span><a href="../perfil-usuario/index.html">Ver Perfil</a></span>
-  </div>
-</header>
-
-<main>
-  <div class="panel">
-
-    <div class="left-menu">
-      <p class="titles">Menu</p>
-
-      <!-- CATEGORIA 1 -->
-      <div class="category" onclick="toggleCategory(this)">
-        🌳 Árvores
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('plantio')">Solicitar Plantio</button>
-        <button onclick="showService('retirada')">Solicitar Retirada</button>
-      </div>
-
-      <!-- CATEGORIA 2 -->
-      <div class="category" onclick="toggleCategory(this)">
-        💡 Iluminação
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('iluminacao')">Solicitar Iluminação</button>
-      </div>
-
-      <!-- CATEGORIA 3 -->
-      <div class="category" onclick="toggleCategory(this)">
-        🚧 Manutenção de Vias
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('reparo')">Solicitar Reparo de Vias</button>
-      </div>
-
-      <!-- CATEGORIA 4 -->
-      <div class="category" onclick="toggleCategory(this)">
-        🎉 Eventos
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('evento')">Solicitar Permissão de Evento</button>
-      </div>
-
-      <!-- CATEGORIA 5 -->
-      <div class="category" onclick="toggleCategory(this)">
-        🚨 Denúncias
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('denuncia')">Registrar Denúncia</button>
-      </div>
-
-      <!-- CATEGORIA 6 -->
-      <div class="category" onclick="toggleCategory(this)">
-        🐾 Animais
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('remocao-animal')">Solicitar Remoção de Animal Morto</button>
-      </div>
-
-      
-      <!-- CATEGORIA 99 -->
-      <!--<div class="category" onclick="toggleCategory(this)">
-        📢 Outros
-        <span class="arrow">▶</span>
-      </div>
-      <div class="subcategory">
-        <button onclick="showService('denuncia')">Fazer Denúncia</button>
-        <button onclick="showService('evento')">Permissão de Evento</button>
-      </div>-->
+  <header class="header d-flex justify-content-between align-items-center px-4">
+    <div class="left d-flex align-items-center gap-2">
+      <a href="index.html" class="text-white text-decoration-none d-flex align-items-center gap-1">
+        <span class="menu-icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home" width="24" height="24" /></span>
+        <h1 class="mb-0 fs-5 fw-bold">Home</h1>
+      </a>
     </div>
-    
+    <div class="right text-end text-white fs-5">
+      <strong>Olá, Usuario</strong><br />
+      <span><a href="../perfil-usuario/index.html" class="text-white text-decoration-underline">Ver Perfil</a></span>
+    </div>
+  </header>
 
-    <div class="right-content">
-      <!-- CONTEÚDOS -->
-        <div class="right-panel">
-            <p class="titles" id="default-title">Conecta Irecê - Serviços</p>
-            <p id="default-text">
-                Verifique o <strong>"Menu"</strong> e selecione um serviço. Após isso, clique nas opções disponíveis se deseja solicitar ou verificar mais detalhes sobre um serviço em específico.
-            </p>
-            <div id="service-details">
-                <!-- Conteúdo dinâmico será exibido aqui -->
-            </div>
+  <div class="container my-3">
+    <div class="d-flex justify-content-center">
+      <div class="col-12 col-md-6">
+        <input
+          type="text"
+          class="form-control search-bar"
+          placeholder="🔍 Pesquise um serviço..."
+        />
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-grow-1 d-flex justify-content-center align-items-center py-5 px-3">
+    <div class="container">
+      <div class="row gx-2 gy-4 justify-content-center"> <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../solicitar-plantio-arvore/cidadão/index.html" class="btn-square">
+              🌳<br>Solicitar Plantio
+            </a>
+          </div>
         </div>
-
-      <div id="plantio" class="service-details">
-        <h3>🌱 Plantio de Árvore</h3>
-        <p>Solicite o plantio de árvores em áreas públicas com o objetivo de ampliar áreas verdes e promover a sustentabilidade urbana.</p>
-        <a href="../solicitar-plantio-arvore/cidadão/index.html">Acessar Serviço</a>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../solicitar-remocao-arvore-caida/cidadão/index.html" class="btn-square">
+              🪓<br>Retirada de Árvore
+            </a>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../solicitar-manutencao-iluminacao/cidadao/index.html" class="btn-square">
+              💡<br>Iluminação Pública
+            </a>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../solicitar-manutencao-vias/cidadão/index.html" class="btn-square">
+              🚧<br>Reparo em Vias
+            </a>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../solicitar-evento/cidadao/index.html" class="btn-square">
+              🎉<br>Permissão de Evento
+            </a>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../denuncia_ocupacao/cidadao/index.html" class="btn-square">
+              🚨<br>Registrar Denúncia
+            </a>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="../solicitar-remocao-animal-morto/cidadão/index.html" class="btn-square">
+              🐾<br>Remover Animal
+            </a>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="square-wrapper">
+            <a href="#" class="btn-square">
+              🐾<br>Remover...
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div id="retirada" class="service-details">
-        <h3>🪓 Retirada de Árvore</h3>
-        <p>Requisição de retirada de árvore em risco de queda ou em local impróprio, garantindo a segurança da população.</p>
-        <a href="../solicitar-remocao-arvore-caida/cidadão/index.html">Acessar Serviço</a>
+      <div class="row justify-content-center g-4 mt-4">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+          <img src="/images/placeholder.png" class="img-fluid rounded shadow-sm" alt="Imagem 1" />
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+          <img src="/images/placeholder.png" class="img-fluid rounded shadow-sm" alt="Imagem 2" />
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+          <img src="/images/placeholder.png" class="img-fluid rounded shadow-sm" alt="Imagem 3" />
+        </div>
       </div>
 
-      <div id="iluminacao" class="service-details">
-        <h3>💡 Solicitação de Iluminação</h3>
-        <p>Solicite a instalação de iluminação pública em locais escuros para aumentar a visibilidade e segurança urbana.</p>
-        <a href="../solicitar-manutencao-iluminacao/cidadao/index.html">Acessar Serviço</a>
-      </div>
+    </div>
+  </main>
 
-      <div id="reparo" class="service-details">
-        <h3>🛠️ Solicitar Reparo em Vias</h3>
-        <p>Solicitação de reparos estruturais em ruas, calçadas ou avenidas em situação crítica ou com risco de acidentes.</p>
-        <a href="../solicitar-manutencao-vias/cidadão/index.html">Acessar Serviço</a>
-      </div>
-
-      <div id="denuncia" class="service-details">
-        <h3>🚨 Fazer Denúncia</h3>
-        <p>Canal aberto para denúncia de irregularidades ambientais, sociais ou urbanas com total sigilo garantido.</p>
-        <a href="../denuncia_ocupacao/cidadao/index.html">Acessar Serviço</a>
-      </div>
-
-      <div id="evento" class="service-details">
-        <h3>📅 Permissão para Eventos</h3>
-        <p>Solicite autorização para realizar eventos públicos respeitando normas de uso de espaços e segurança.</p>
-        <a href="../solicitar-evento/cidadao/index.html">Acessar Serviço</a>
-      </div>
-
-      <div id="remocao-animal" class="service-details">
-        <h3>🐾 Solicitar Remoção de Animal Morto</h3>
-        <p>Você pode solicitar a remoção de um animal morto em uma área pública.</p>
-        <a href="../solicitar-remocao-animal-morto/cidadão/index.html">Acessar Serviço</a>
+  <footer class="footer-custom text-white py-4 mt-auto">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p class="mb-2">Conecte-se conosco nas redes sociais</p>
+          <div class="social-icons d-flex gap-2">
+            <a href="#"><img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"></a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <p class="mb-0"><strong>Prefeitura Municipal de Irecê</strong><br>
+            13.715.891/0001-04 | Rua Lafaiete Coutinho, s/n - Bairro: Fórum<br>
+            CEP: 44864-254 | Município de Irecê<br>
+            Telefone: (74) 3641-3116<br>
+            Atendimento: segunda a sexta-feira, das 08:00 às 12:00 e das 14:00 às 17:00 horas.
+          </p>
+        </div>
       </div>
     </div>
+  </footer>
 
-  </div>
-</main>
-
-<footer>
-    <p>Projeto de Inovação (2025.1)<br><strong>IFBA - IRECÊ</strong></p>
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

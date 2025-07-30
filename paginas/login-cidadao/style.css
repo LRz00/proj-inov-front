@@ -1,43 +1,50 @@
 @import url('../../global.css');
 
 body {
-  background-color: var(--cream);
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #EDEDED;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.container-principal {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  height: 80vh;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .container-login {
-  text-align: center;
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BDC4A7; /* cor do fundo geral */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* apenas o card tem fundo branco */
+.card-login {
   width: 100%;
   max-width: 400px;
-  padding: 20px;
 }
 
 .bem-vindo {
   font-size: 1.5rem;
   color: var(--dark-grey);
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .conecta-laranja {
   color: var(--light-orange);
-}
-
-.card-login {
-  background-color: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.card-login h2 {
-  color: var(--dark-grey);
-  margin-bottom: 20px;
 }
 
 label {
@@ -107,4 +114,22 @@ input[type="password"] {
   text-align: center;
   margin-top: 10px;
   color: red;
+}
+
+/* imagem com fundo separado */
+.container-imagem {
+  flex: 1;
+  height: 80%; /* Igual ao container-login */
+  display: flex;
+  justify-content: center;
+  align-items: center;/* opcional: cor de fundo para diferenciar */
+}
+
+.container-imagem img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover; /* cobre tudo sem distorcer */
+  display: block;
+  justify-content: center;
+  align-items: center;
 }

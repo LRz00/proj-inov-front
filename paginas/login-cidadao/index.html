@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login do Cidadão</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="container-login">
-    <div class="text-center mb-4">
-      <h1 class="bem-vindo">Bem-vindo ao <span class="conecta-laranja">CONECTA CIDADE</span></h1>
+  <div class="container-principal">
+    <!-- COLUNA DO LOGIN -->
+    <div class="container-login">
+      <div class="card-login">
+        <h1 class="bem-vindo">Bem-vindo ao <span class="conecta-laranja">CONECTA CIDADE</span></h1>
+        <h2 class="text-center mb-4">Login do Cidadão</h2>
+
+        <form id="form-login" novalidate>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Digite seu e-mail" required />
+
+          <label for="senha">Senha</label>
+          <div class="senha-container">
+            <input type="password" id="senha" placeholder="Digite sua senha" required />
+            <span id="toggleSenha">👁️</span>
+          </div>
+
+          <button type="submit" class="btn-login">Entrar</button>
+          <button type="button" class="btn-cadastrar" id="cad-btn"
+            onclick="window.location.href='../cadastro-pessoa-fisica/index.html'">Cadastrar</button>
+
+          <p id="mensagem"></p>
+        </form>
+      </div>
     </div>
 
-    <div class="card-login">
-      <h2 class="text-center mb-4">Login do Cidadão</h2>
-
-      <form id="form-login" novalidate>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Digite seu e-mail" required />
-
-        <label for="senha">Senha</label>
-        <div class="senha-container">
-          <input type="password" id="senha" placeholder="Digite sua senha" required />
-          <span id="toggleSenha">👁️</span>
-        </div>
-
-        <button type="submit" class="btn-login">Entrar</button>
-        <button type="button" class="btn-cadastrar" id="cad-btn"
-          onclick="window.location.href='../cadastro-pessoa-fisica/index.html'">Cadastrar</button>
-
-        <p id="mensagem"></p>
-      </form>
+    <!-- COLUNA DA IMAGEM -->
+    <div class="container-imagem">
+      <img src="/images/login-image.png" alt="Imagem decorativa" />
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
