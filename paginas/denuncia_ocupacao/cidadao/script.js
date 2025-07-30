@@ -6,7 +6,7 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
   const denuncia = document.getElementById('denuncia').value;
   const solicitante = JSON.parse(localStorage.getItem('usuario'))
 
-  if (!descricao || !prioridade || !denuncia || !solicitanteId) {
+  if (!descricao || !prioridade || !denuncia) {
     alert('Por favor, preencha todos os campos.');
     return;
   }
@@ -14,7 +14,7 @@ document.getElementById('denuncia-form').addEventListener('submit', async functi
   const data = {
     descricao: descricao,
     dataCriada: new Date().toISOString(),
-    status: "PENDENTE", 
+    status: "ABERTA", 
     solicitante,
     prioridade: prioridade,
     denuncia: denuncia

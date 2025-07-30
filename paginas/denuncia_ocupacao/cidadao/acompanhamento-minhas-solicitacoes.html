@@ -18,22 +18,23 @@
         <th>Última Atualização</th>
       </tr>
     </thead>
-    <tbody>
-      <!-- As linhas serão adicionadas via JS -->
-    </tbody>
+<tbody id="tabela-denuncias">
+  <!-- Conteúdo será adicionado via JS -->
+</tbody>
   </table>
 
-  <div class="avaliacao-servico">
-    <h2>Avalie este serviço</h2>
-    <div class="estrelas" id="estrelas">
-      <span class="estrela" data-valor="1">&#9733;</span>
-      <span class="estrela" data-valor="2">&#9733;</span>
-      <span class="estrela" data-valor="3">&#9733;</span>
-      <span class="estrela" data-valor="4">&#9733;</span>
-      <span class="estrela" data-valor="5">&#9733;</span>
-    </div>
-    <p id="nota-selecionada"></p>
+<div class="avaliacao-servico" id="avaliacao-container" style="display: none;">
+  <h2>Avalie a denúncia ID <span id="id-denuncia-avaliacao"></span></h2>
+  <div class="estrelas" id="estrelas">
+    <span class="estrela" data-valor="1">&#9733;</span>
+    <span class="estrela" data-valor="2">&#9733;</span>
+    <span class="estrela" data-valor="3">&#9733;</span>
+    <span class="estrela" data-valor="4">&#9733;</span>
+    <span class="estrela" data-valor="5">&#9733;</span>
   </div>
+  <p id="nota-selecionada"></p>
+</div>
+
 
   <script src="acompanhamento.js"></script>
 </body>
