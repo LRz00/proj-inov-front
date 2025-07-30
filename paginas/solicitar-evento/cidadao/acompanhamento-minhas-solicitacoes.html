@@ -6,42 +6,27 @@
     <link rel="stylesheet" href="acompanhamento-minhas-solicitacoes.css">
 </head>
 <body>
+<h1>Minhas Solicitações</h1>
 
-    <h1>Minhas Solicitações</h1>
+<div id="media-geral" style="margin-bottom: 20px; font-weight: bold;">Média de avaliações: carregando...</div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tipo de Solicitação</th>
-                <th>Status</th>
-                <th>Última Atualização</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>2</td>
-                <td>Solicitação de Evento</td>
-                <td>Finalizado</td>
-                <td>18/07/2025</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="avaliacao-servico">
-        <h2>Avalie este serviço</h2>
-        <div class="estrelas" id="estrelas">
-            <span class="estrela" data-valor="1">&#9733;</span>
-            <span class="estrela" data-valor="2">&#9733;</span>
-            <span class="estrela" data-valor="3">&#9733;</span>
-            <span class="estrela" data-valor="4">&#9733;</span>
-            <span class="estrela" data-valor="5">&#9733;</span>
-        </div>
-        <p id="nota-selecionada"></p>
-    </div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tipo</th>
+      <th>Status</th>
+      <th>Última Atualização</th>
+      <th>Avaliar</th>
+    </tr>
+  </thead>
+  <tbody id="tabela-solicitacoes">
+    <!-- Preenchido via JS -->
+  </tbody>
+</table>
 
     <div style="margin-top: 30px; text-align: center;">
-        <a href="../../menu-acompanhamento.html">
+        <a href="../../perfil-usuario/acompanhamento-main/index.html">
             <button class="botao-voltar">⬅ Voltar para o Menu Principal (Cidadão)</button>
         </a>
     </div>

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
 
+  carregarMediaAvaliacoes();
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -10,42 +12,40 @@ document.addEventListener("DOMContentLoaded", function () {
     const nomeRua = document.getElementById("nomeRua").value.trim();
     const local = document.getElementById("local").value.trim();
     const dataEvento = document.getElementById("dataEvento").value;
+    const solicitante = JSON.parse(localStorage.getItem('usuario'));
 
-    // Validação básica
-    if (!tipoEvento || !bairro || !nomeRua || !local || !dataEvento) {
+    if (!tipoEvento || !bairro || !nomeRua || !local || !dataEvento || !solicitante || !solicitante.id) {
       alert("Por favor, preencha todos os campos.");
       return;
     }
 
     // Prepara os dados para enviar ao backend
     const data = {
+      descricao: `Solicitação para evento do tipo ${tipoEvento}`,
+      dataCriada: new Date().toISOString(),
+      status: "ABERTA",
+      solicitante,
       tipoEvento: tipoEvento,
       bairro: bairro,
       nomeRua: nomeRua,
       local: local,
-      dataEvento: dataEvento
+      dataEvento: dataEvento // no formato datetime-local já está ISO
     };
 
     try {
-      const response = await fetch("/api/eventos", {
+      const response = await fetch("http://localhost:8080/solicitacao-eventos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
-          // Se usar Spring Security com CSRF, adicione aqui o token
-          // 'X-CSRF-TOKEN': 'valor_do_token'
         },
         body: JSON.stringify(data)
       });
 
-      if (!response.ok) {
-        throw new Error("Erro na comunicação com o servidor.");
-      }
-
       const result = await response.json();
 
-      if (result.success) {
+      if (response.ok) {
         alert("Solicitação enviada com sucesso!");
-        form.reset(); // limpa o formulário
+        form.reset();
       } else {
         alert("Erro ao enviar solicitação: " + (result.message || "Erro desconhecido."));
       }
@@ -54,3 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Buscar e exibir média de avaliações
+async function carregarMediaAvaliacoes() {
+  try {
+    const response = await fetch("http://localhost:8080/solicitacao-eventos/media");
+
+    if (!response.ok) {
+      throw new Error("Erro ao obter média");
+    }
+
+    const media = await response.json();
+    document.getElementById("media-avaliacoes").textContent = `Média de avaliações: ${media.toFixed(1)}`;
+  } catch (error) {
+    console.error("Erro ao buscar média de avaliações:", error);
+    document.getElementById("media-avaliacoes").textContent = "Média de avaliações: não disponível";
+  }
+}
