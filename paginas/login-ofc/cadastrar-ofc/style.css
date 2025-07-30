@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Light gray background */
+}
+
+.container {
+    display: flex;
+    width: 900px; /* Adjust as needed */
+    height: 600px; /* Adjust as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.left-panel {
+    flex: 1;
+    background-color: #d5d9c2; /* Light green/beige */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.left-panel h1 {
+    color: #5c6f39; /* Darker green for heading */
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+.left-panel form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+}
+
+.left-panel label {
+    text-align: left;
+    margin-bottom: 5px;
+    color: #5c6f39;
+    font-size: 0.9em;
+}
+
+.left-panel input[type="text"],
+.left-panel input[type="email"],
+.left-panel input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #a8b98b; /* Border color for inputs */
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 1em;
+}
+
+.left-panel input[type="text"]:focus,
+.left-panel input[type="email"]:focus,
+.left-panel input[type="password"]:focus {
+    outline: none;
+    border-color: #8da466; /* Darker border on focus */
+    box-shadow: 0 0 5px rgba(141, 164, 102, 0.5);
+}
+
+.left-panel button {
+    background-color: #e68e59; /* Orange button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.left-panel button:hover {
+    background-color: #d17849; /* Darker orange on hover */
+}
+
+.left-panel p {
+    margin-top: 20px;
+    color: #5c6f39;
+    font-size: 0.9em;
+}
+
+.left-panel a {
+    color: #e68e59; /* Orange for link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.left-panel a:hover {
+    text-decoration: underline;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #e0e6ec; /* Light blue/gray background for illustration */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* To contain the background shapes */
+}
+
+.right-panel img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 1; /* Ensure image is above background shapes */
+}
+
+/* Background shapes for the right panel (similar to the image) */
+.right-panel::before,
+.right-panel::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 50%; /* Make them circular or rounded */
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.right-panel::before {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 15%;
+    transform: rotate(45deg);
+    border-radius: 20% 50% 30% 60% / 60% 30% 50% 20%; /* Irregular shape */
+    background-color: #c7dbe4; /* Light blue */
+}
+
+.right-panel::after {
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    right: 10%;
+    transform: rotate(-30deg);
+    border-radius: 50% 20% 60% 30% / 30% 60% 20% 50%; /* Irregular shape */
+    background-color: #a8b98b; /* Light green */
+}
+
+
+/* Basic responsive adjustments (optional, but good practice) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .left-panel,
+    .right-panel {
+        flex: none;
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .left-panel h1 {
+        font-size: 2em;
+    }
+
+    .right-panel img {
+        max-height: 250px; /* Adjust image size for smaller screens */
+    }
+
+    .right-panel::before,
+    .right-panel::after {
+        display: none; /* Hide complex shapes on small screens for simplicity */
+    }
+}

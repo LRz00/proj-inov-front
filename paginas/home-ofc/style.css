@@ -1,0 +1,274 @@
+:root {
+            --primary-orange: #e67e22; /* Um laranja parecido com o da imagem */
+            --dark-grey: #333;
+            --light-grey-bg: #f5f5f5;
+            --medium-grey-text: #666;
+            --white: #fff;
+            --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-grey-bg);
+            line-height: 1.6;
+            color: var(--dark-grey);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        header .user-profile {
+            font-size: 0.9em;
+        }
+
+        header .user-profile a {
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 1px solid var(--white);
+            padding-bottom: 2px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+            background-color: var(--light-grey-bg); /* Match body background for continuity */
+        }
+
+        .search-bar .search-box {
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .search-bar .search-box input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            font-size: 1em;
+            padding: 5px;
+        }
+
+        .search-bar .search-box .search-icon {
+            margin-right: 10px;
+            color: var(--medium-grey-text);
+            font-size: 1.2em; /* Using a placeholder, ideally an SVG or icon font */
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px 0;
+            justify-content: center;
+            max-width: 900px; /* Adjust as per image's grid width */
+            margin: 0 auto;
+        }
+
+        .category-item {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 25px 15px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: var(--box-shadow);
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-item .icon {
+            font-size: 2.5em; /* Placeholder for actual icons */
+            margin-bottom: 10px;
+            color: var(--white); /* Ensure icon color is white */
+        }
+
+        .category-item .text {
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px 0;
+            max-width: 1000px; /* Adjust width to match image */
+            margin: 0 auto;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            display: block; /* Remove extra space below image */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 30px 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center; /* Center content horizontally */
+            align-items: flex-start; /* Align items to the top */
+            gap: 40px; /* Space between blocks */
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Take full width within footer padding */
+            max-width: 1000px; /* Match gallery width */
+        }
+
+        .social-media, .contact-info {
+            flex: 1; /* Allow content to grow/shrink */
+            min-width: 280px; /* Minimum width before wrapping */
+        }
+
+        .social-media h3, .contact-info h3 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 1.2em; /* Placeholder for social icons */
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact-info p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+            }
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for gallery */
+            }
+            .footer-content {
+                flex-direction: column; /* Stack footer content vertically */
+                align-items: center;
+                text-align: center;
+            }
+            .social-media, .contact-info {
+                width: 100%; /* Full width when stacked */
+                margin-bottom: 20px;
+            }
+            .social-icons {
+                justify-content: center; /* Center social icons */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on even smaller screens */
+            }
+            .image-gallery {
+                grid-template-columns: 1fr; /* Single column for gallery */
+            }
+            header .logo {
+                font-size: 1.2em;
+            }
+            header .user-profile {
+                font-size: 0.8em;
+            }
+            .search-bar .search-box {
+                padding: 8px 10px;
+            }
+            .category-item {
+                padding: 20px 10px;
+            }
+            .category-item .icon {
+                font-size: 2em;
+            }
+            .category-item .text {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .category-grid {
+                grid-template-columns: 1fr; /* Single column for categories on very small screens */
+            }
+        }
+
+        /* Placeholder icons - replace with Font Awesome or SVG later */
+        .icon-saude::before { content: "💊"; }
+        .icon-infraestrutura::before { content: "🏗️"; }
+        .icon-meio-ambiente::before { content: "🌳"; }
+        .icon-educacao::before { content: "📚"; }
+        .icon-permissoes::before { content: "📄"; }
+        .icon-cultura::before { content: "🎭"; }
+        .icon-administracao::before { content: "⚙️"; }
+        .icon-ajuda::before { content: "❓"; }
+        .icon-search::before { content: "🔍"; }
+        .icon-facebook::before { content: "f"; /* For demo, use actual icon font in production */ font-family: sans-serif; }
+        .icon-youtube::before { content: "▶️"; }
+        .icon-linkedin::before { content: "in"; /* For demo, use actual icon font in production */ font-family: sans-serif; }
+        .icon-instagram::before { content: "📸"; }

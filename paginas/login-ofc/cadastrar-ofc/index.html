@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta Irecê - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Conecta Irecê</h1>
+            <form>
+                <label for="fullName">Nome Completo:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" title="Digite um CPF válido (ex: 123.456.789-00)" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="" required>
+
+                <button type="submit">Criar conta</button>
+            </form>
+            <p>Já tenho uma conta? <a href="#">ENTRAR</a></p>
+        </div>
+        <div class="right-panel">
+            <img src="../imagem/image.png" alt="Illustration of a laptop, lamp, and cactus">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefeitura Municipal de Irecê - Infraestrutura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../home-ofc/index.html">
+            <svg width="50" height="50" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="50" height="50" fill="url(#pattern0_185_648)"/>
+                <defs>
+                <pattern id="pattern0_185_648" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_185_648" transform="scale(0.0111111)"/>
+                </pattern>
+                <image id="image0_185_648" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbklEQVR4nO3cMWsUYRRG4U0KTcD/HQuRtDb5ERYh/2ZhG9nCe8UIKY8MNnZW9/3c2fPAdFO8HIZvtxjmcJAkSZIkSdJFAd5X1aeq+t7dv6rqy+l0ul+9a3eRu/u5u/n72mKv3rb7yP3n+rl63zVEprt/rN54DZGpqs+rd+4+cnc/b/et3nqxgHfd/fUfT/LL8Xi8W731YmHkeUYOwMjzMPI8jDwPI8/DyPMw8jyMPA8jz8PI8zDyPIw8DyPPw8jzMPI8jDwPI8/DyPMw8jyMPA8jz8PI8/Dlloyq+mjkgO7+5nER0IbO6O4Hj44A/DHMwb93ORg7B2PnYOwcjJ2DsXMwdg7GzsHYORg7B2PnYOwcjJ2DsXMwdg7GzsHYORg7B2PnYOwcjJ2DsXMwdo6xg3xJ5/+L/ZjcdM2xX4Gb1Tt3H7uq3oDb1Ruv4bPGT6u37TX243ZcbE/yFvl8Pn9YvWu3gBvPZUmSJEmSDnv2G6dBsFXTxd51AAAAAElFTkSuQmCC"/>
+                </defs>
+            </svg>
+        </a>
+        <div class="logo"> Infraestrutura</div>
+        <div class="user-profile">Olá, babadeiro <a href="#">Ver perfil</a></div>
+    </header>
+
+    <main>
+        <section class="search-bar">
+            <div class="search-box">
+                <span>
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="50" height="50" fill="url(#pattern0_126_405)"/>
+                        <defs>
+                        <pattern id="pattern0_126_405" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_126_405" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_126_405" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpklEQVR4nO2cy2uVRxTAfxG8mocL3+22SF20WNBWq0TqovgAi7Z/h2myq7oSEdqNjxjdiqRV20ARBYuIaCs+qutWu6mt4iMmJpsu1EiNDJwLIdwz97tJ7jdzJvODs7n38n3nnDvfmTNnznyQyWQymUwmk8lkMpmatANbgD3ASeB34G9gFHglMiqf3ZLfuN9uBtpqXzJTZRnQA1wTR45PUV7JNbrlmhlhI3AOeD0N52oyJtfuZBbzGfBbE5yrya/yp84a3gH6gTclOnmiDADLSZyvZBIbDyyjwE4SpAL0NjiKnwCngC7JJlYAC4G5IgvlM/fd1/Lbpw1c3+lyWK6VBB3ApYLGDwFHgDXTuN/H8qcOF7znRdHRNIuBOwWMfQDsAlpn8N6t8jQ8LHD/26KrSdzC4WaB9Ku3ySPKOXwf8LKOLncsjuxKgXDxJ/BBiTp9CNwtEEZMxezeOgadCbRUbpf0zqfbIYzwRZ3s4hgwJ6B+LcDBOtnIlxhYjPjy5KPEQ59Hz5HY6yTf1wkXIUfyZObUCSOuIhht7UILGX9EWr7sAO55QkiUxSitQPSy5OyiUVZ5yrJXiIz1nkdwP/HzrUf/qEb1Oc+KbyZXe81M+x4pNpwlEpbJCq+Wkm5ZbYUez+p1KRErOGRkNFdp8xSiXM0kONcU5VwVzhpHFVuuxhDbtBl7Nfb4xJM5BX06N3uK9hZpAQYVmz4PqdheRakfsMsZxaZvQip1MubJY4p0KzadICC3FKVcSLHKVsWmGyGV+kdR6j3sskKx6X5IpUYUpRZhl8WKTS7HDoaW2rmtLKtUPCleMFJ09DzFJmdrMFIMHUsUm5ytwZhNk+GDGNM710RulW2KTddjXLC4Xjir9Cg2uQ7YYOxRlDqNXX5UbHK2BmOLotSgFGhSKiptCl0s11I819VpjXWeXRZXEo6y8O/awqzRp9hymYirXUOR9nJoOF2fx7z36duc7Upkc/ZdIm83eGhkVLcDjxUbfiIiOhUlnRwgfr6z0kCDnOPTql6uCTxWPvJkTlFMgpPZ6GlyvBtDelSDBcBfis7Olk+JlH7PIzgQYdvuzxbbdpETqb5GdJenxsJxj57DUi6Nmu0JHK3YiREOewyphpGOQDHZFy5MHRZCjpBdrGPQPWkCLzO70Ca+iXJBtrPM0Ca9EEUOdC5osh5FDnROFDdI5mNs6/52AcMeSc1kJleRbbKs1lZ8yY3sjgJhZHzCbO9aZ9dOsZ7dIqXOPk+BKGlnz5VJppHXSAxKw2G3tGm9L6+OqIi4nfaV8l2P7Iw8a+D6b0SnC6k527HD06IwXqIMiy6IE5N09iKZAP8P5OSBGmdSKp4KpNkJskqnnOMry8GX69Qukh3ZVTbIETNt82A6Mib15KKlzuSdjdQWuuRgTiM572R5LaN31xR3RmaFs6u0ypmR3dJpf1NejzkiteMxKV79Kx1E/dJ3sWmGyrFFnP1LKs4OTdITZGxkZ5fs7PN5ZJdDdnaJZGeXSHZ2icyT1C6nfpE42+LbHUw6+z+jPeLmnP0isj6WZJ0d9JB+ys4+IuHihTjZ3Jt7LeFico7LmUwmk8lkMpkMzeUtHb2WZFcSK0cAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
+                </span>
+                <input type="text" placeholder="Pesquisar">
+            </div>
+        </section>
+
+        <section class="main-content-columns container">
+            <div class="left-column">
+                <a href="#" class="category-button active" data-content-id="solicitacoes-content">
+                    <span>
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="70" height="70" fill="url(#pattern0_126_493)"/>
+                            <defs>
+                            <pattern id="pattern0_126_493" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_126_493" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_126_493" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFgElEQVR4nO1cS4hcRRRtTVQEhSj+YowEN64EPwuFBCKIC3/RleBGYqLiJx+iCyW7LMSZhV+UjB80uhAy+/hBB0NiYsAsdJUYCciEUbv71TnV3aOJOE7Jpauh0/b0vO6uevW6Xx240HRX1b3ndL16t+pVvVIpIiIiIiIiIiIiIiIiYjAAuBHAdgBfAjhJcl5MPtvvtiml1g7YfESSJGsAvAdggaTpZQD+BTBNcl3ouEcKJB8h2VhO4C5WB7ApdPwjAQA7pYcOIHJ7794RmkfuezKGELlD7NizuyFJkhsGHC6WHEaq1er1XZ0VGQA+cihyq2d/EJpXHlO4BQ9CL8iVEppfbgBgh2uR28R+PjS/3IDkF76EJnkgNL/cAMAvHnv0ydD8cgO6zTY6rRGaX1GEroXmlxsA+Nmj0CdC88sNGG+G2QDANo83w2dD88sNlFJrPU1Y/okTlg4A+NCD0FOdfgqPJEnWyEKQy2yjUqmsDs0rl1BK3ediCLHLpA+F5pP7dQ8Mv/C/PTSPkQCATQMOIzUAD4aOf6RQr9evJvmWZA5pejHJT+OYPAQkPZOlTpKfyyzPTtcb9vMBAM/FFC4iIiKiCWPMxQAmSf4GYBFNJABOAzgF4DjJ7wF8RfITkq/IOCp5LcnbGo3GNaE5NBqNayUWiUlikxjlZmpjltiPWy6nLTfBIsk5ABOigfcgxZGDCYXgW5JvknyC5O0+gjfGXCJtk9wiGQzJgwDoIP6Jkm9IT3a9JsGm/QXga631S1rrO4wxF/Ybm9SRutKGtAXgrKdYfy/5hqfATZdeUwXwPsm7e4kuv0kZKSt1sopvbITm+XZGLtf2fNnm1zKMnQkR07gKbWwv/5vkPjH7OVgswYRWSq1XSt2vlHpMnmoAeNn2uH0AZmRLAYBzIcXp+NPO2cxCYvtYYpWxXSn1jHCwXNbnTui09SuVymoAG+yfMSXplO/tBiSPii/xKeKVy+XrsuI7MHw4NsasTJLkLgC7AXwzzLAgdW0bu2u12p3GmBV545sbxyRXAXjcpmiLKQWWScZOWfVzHMv4Ct2OWq12M4D9PQTeL2VKnlAYoQvlt1qtXm4nBJWlHMs4WxozoY0xK3tcSWW5wYo2zhzaGdpy4+QhnwtGzFhoyUxIHs50S0OvntxhR32tbDFDoY0xF6UR2QpdceY4pcgt2+rMcSChtdZP98M5lNDfOXMcSGiSR3IvNADlzHEgoWWxPArNKHTLDjtz3IY4dPzftjhzHE7oJ4MILcl5SqdHxii9O5T5Yy15b0YKhwddL+iEElogk6+UYu91PQWf6tWzCzgF/0NELpfLl40N4SL6LRxhRqE51n4LR5hRaI6138IRZhSaY+23cIQZheZY+13SMYBjdh/GtBw3BvAGyT0knwLwAIBbtNZXuvY7aHsSi8QksdknKnskZhv7tOVyLHdC92HzAH6wr197QWt9b71ev2pQv8vVk/UX8UHyRfFpTyTMD8vDmaD9Eh7G0NyN9BOA12RzYbf1g7SEpa69gl63baba6ZRHoed8BM7zhT9rL9+HW4tVvQhLGSlr6/ja5d9ucyNxhoX92a8kd/X4fZctk2VMr2Z1Kmsii57N/Fl2p7K67fzUWl8hL8nWWt9E8lbZ/6y1ftS+onjSHi2b8XjQaFDRZmxskxKrjXmDcLBc1lluq0qjBt1Mqzbas4eyn++Ub1HlLWTWl/jcOEyaOfLvVCK5meRnLlIv24a0tTm+/7/HYzPZVtbvI39rUmer0x2eRQDJe0j+mELgE5I7h453pGGMWUHy3R4ivzPsOZUIC2PMBd3OcMvWLfmtVS7CAaTndunNb7toO6INs7Ozl9pziX9a2yvftZeJcAgZKuJwERERERERURo9/Adexb2LwF6vPgAAAABJRU5ErkJggg=="/>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="text">Solicitações</span>
+                </a>
+                <a href="#" class="category-button" data-content-id="denuncias-content">
+                    <span>
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="70" height="70" fill="url(#pattern0_126_492)"/>
+                            <defs>
+                            <pattern id="pattern0_126_492" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_126_492" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_126_492" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="text">Denúncias</span>
+                </a>
+                <a href="#" class="category-button" data-content-id="resultados-content">
+                    <span>
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="70" height="70" fill="url(#pattern0_126_491)"/>
+                            <defs>
+                            <pattern id="pattern0_126_491" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_126_491" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_126_491" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACTElEQVR4nO2czW7UMBhFvQIeoS19RH5WTNnRJU8GdAU8wazzo+8GtYuyMrLESKOKAdshjuM5R7qrSpFz6n5Rryw7BwAAAAAAAAAAAAB/Y7/fvzCzt2Z2J+lBkicKeTCzL2b2xnv/fJbkcRyvJX2v4KV85fkWXGXvZCQrSXbWzg7jooLF+y3FzF7niL6rYfHaVj4ni5Z0X8HC/cZynyN67UX7LQbRQrRvKYhWXMzswzRNN4jWspIP758rG9GKlzxH9iKizexR0ru+7y9dBfR9fylpZ2Y/EwXdnnpm+NnqooNkVyFT2k48KTlHdvJiYx7add2Fq5Cu6y5yx8XcX17yYmMeWsvIeMo4ji8jRX90kcTu6tjnHT845k9l5yrEzN43NTp+fwx3wzBcuQoYhuEq/Im3+DFsJvaHMZIqGdFKl50jGdFKym2uZESrXBAtRPuWgmjFhZpUZSQf3p+aVMtLniN78zVpn1+BNvGfYfGadJoxP1Mln3VN2kVWoLnj4hRnV5OOkRVopGhq0v9UgbYxOkrWpEN+BdrEx7CZGDWpVpFNTarFQ02qDQTRQrRvKYhWXKhJVUby4f2pSbW85DmyFxHNaVIV29GcJlUB0ZwmVRnRtYyMp3CatBCcJl0YTpOq/lCTah3Z1KRaPNSk2kAQLUT7cxfNxShKzo9k0Vz1ozJX/YT73CpYuN9SzOxVsuhwtVi4YmztxWsjMbOv3vtnbsYFg8jWvyWHIitL8vHODve5hfnDB1LHCS4+hXGRvZMBAAAAAAAAAAAA3NnwC0ibgBE9EN8IAAAAAElFTkSuQmCC"/>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="text">Resultados</span>
+                </a>
+                <a href="#" class="category-button" data-content-id="ajuda-content">
+                    <span>
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="70" height="70" fill="url(#pattern0_126_447)"/>
+                            <defs>
+                            <pattern id="pattern0_126_447" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_126_447" transform="scale(0.0111111)"/>
+                            </pattern>
+                            <image id="image0_126_447" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFQklEQVR4nO2daYxeUxjHn7ZatBVbS0UIYt9iixBLaVEJIREpSX0gltBok5YqX6RFm2qCCCmiISERopbwoUFRjFaQ2BpK1Yh1OrRiHdrqT568R+hk3jvn3Peec8+59/6+zz3P85/7nuVZzhVpaGhoaGhoaKgtwChgAnAT8BDQBXwBbAA2An3A98AnwErgceA6YDwwumz7owbYF7gBWAFsIj99RvhzgGFl+xUFwAhgihHXBx8Ck6SuANsDs4HvCMNiYDupC8Aw4HLgG8LzOjBSqg5wiFm4yuQxqSrAEGCWWaRi4HfgK2A5MBc4XlJHt1rAU8TPO8B5kiLAPsAq0uI5YKykArC/+XmmyJfAURI7wMHAt6TNhqjFBnY3b0QV6NXTqsSGHgg8nvDK4n09XElMAA9TTe6QWADOp7psBo6NQeSxQA/VpisGoTVeXAcmlb2V6yR2nBLLyxRaT1Ip8Zoubh38/ZFliHwo6XEmMBRYkvPv7ylD6LtJi6X/s31HoDvnIWabkCKPBH4iHX7pf8oDTgG25HjWhJBCTyYtLmrjxyM5nrUwpNApnQLnZPixJ/Cb4/PeC5kxSSU6t8DCH82yuLApSKIXOJz4+RO42uFk65pmOyaE0FqHETNvA0c7+vSg4xiX+lP4P6PmESdfA1fpPjmHT4c57kDu9KPu1kY9QzxsAV4BLgG27dAvPTU678m9oasu5c+/y0yd3n4F+nWNgw1vFTVulkFrCcffwKemaHG2OUKP8uTXbmY8G1b7sKG/QT94EvUPU1+hdXLTgJOBHbw7tLVvupDa0BPCGP3pFkEP8CgwVaNiMZTYArda2t4XwphO+FUjYMCpMQjbH+AsW0dCGJO33u12YIxEDLCT7TYvhDGufAAcJIlgFt/khH5X3xJJCNtzQghDbFmv0TFJDGBBakJPlQSh1ZGQjNC9qfaM0OrmsmG4b0NseEASBTjO0kftfRzn0xAbLpZEAfbGHi3qHOHLEBuOkEQBxuDGlb4MsWFnSbs9uvy6vCgWCo9o3YaTzLDelyEDIhUCR4IaIRWCRuh6Cf1Xm/G8ZD7KIJY5el2bAQvL3yUmtLddx5ttBpwi9RT6Ml9G3NVmQG1iHyIVAIe32efJ8IyMgWdKBcCONzRz7tOIoeYiqYHQNNCi0NnrorEQeWWQnKcGjQYxREthlwInSsLQmhqcSoF9GKHVQoPxhCQKMDHDr/EhDdkD+NyiKGZXSQxglwzf1gYvldC9s0XWeFYB/TK3GMe1Xfhf9KLBj4Ebi2yM18hjxpShTCtqrDxCLDTJ2IHozhvNM8+2ufBqWRGpM9NAtDpjnO7ST8Aa7M8wcHrOZ+qbbMv1Of+RB2hhOfDSIMUzWgB5msQA8HIbI3/MU99hsQaEZJ7EgvnptWNxgQGs0Nwb3akXeCHD4AsTe6N1upgfnciKKcHVHUG7S6H2cniWa2takei1nhMlZoDbBqnHG+1wWeyKEgSeHt1dShkXWWVtk160dcSIPQdY028fvdnUW3eChgo+M41C803ddrim+iIATsiYQpRXUw8+RYP5CWbxEXBg2XZWAuC+TKnhZ+CKKFf2BC/nfhq7QPpJZdubNMBw4Ensby7XeHfz9YkOSq0WYY+GWJ8HbgbONTeSjUu17jo4tFqBi+pVzIMWyZ8tdYBWpK+MnvJnNWEhNfwGy8yMOHaRaHLiAqkztJoo55pPMhXNKtP8k2wZsa+dyWRz+Z/urTuZg+8HTm/25nai6wfGZphreLpMyLTXLKQbzS0La0yyQYW91sz9zjfQNDQ0NDQ0NDRIZfgH+On36ZflQmYAAAAASUVORK5CYII="/>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="text">Ajuda</span>
+                </a>
+            </div>
+
+            <div class="right-column">
+                <div id="solicitacoes-content" class="right-content-block">
+                    <a href="#" class="action-item">
+                        <span>
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_126_489)"/>
+                                <defs>
+                                <pattern id="pattern0_126_489" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_126_489" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_126_489" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEuElEQVR4nO2cS4hcRRSGj28FHY26EQVjNOpCUBSNLyQbIbpwoxtRUME3BBQiElEExY2CTqL4WIjoViQ6uggigoRkZSKYgCszMohxpqv+v2oMRk1MyXFucCLdd+7tnul7T3d9cGCYrr5V56P6dN3u6hLJZDKZTCaTyWQymUxvZmZmziC5HsATJCcBbCe5F8B+LPBXEcr+4rHtRVt9znq9RkkX4wvJS0g+A+BLAIdIpgHjd70WyU0kV8s4k1I60Xu/geTnAP5eBrldo7j2lPalfco4AeBqkjtXSm6J9G9DCNfLqJNSOq2opUeGLXmR7MMA3tCxyChC8pwmZjF7xw4dk4wS09PTp5PcVWPWKdtIvuS9v5fktSGENSGEVSmlUzX07+J/1xVtXtbnAGAN2Tt1bDIqkNxaQW4HwKsxxnUppZP67Uuf65y7EcBrAFwF2ZMyCnQ6nSvLajKAuRDCoysxs/SaIYTHtI+S/o/EGC8X6+iMKUlym5aAlR6D9kHys5JxvC7WIbmvR4KfDlIi6qJ96Xq6x1j2inVI/tYtuRDCmmGPJYRwaQ/R82KdXi/XUCK60+mcBeABvWsk+QPJg0Xo31P6mLapO5YQwmW9xiPWKXm3n+pWOrz3t5A8UGG1cMB7f3PVcaSUTib5xTiKTio7hHDu4vbFJ3JV19s/VhmD9lEmeRxEJ10/6xLs2PJO5S2X6EXLu85S1xLr1JDmdJkFYHMVMSR/JnlNtxKhJaW4lq/av1inaqI8XnqvG5z54mPVJ51zFxa34DcAuJ/kK8VaOfTTp1inn6TZQIh1mhbILJqtCrFO0wKZRbNVIdZpWiCzaLYqxDpNC2QWzVaFWMe6aABnk3yzuCvVeLuVWxUsi44xruvxaeI70jasiib5oG6m7NH+oLQNa6JTSicAeBHA0ZL2QdtJm7AmmiXf2i+KLdI2LIkGsLmsTTHL39KdUtI2mhbI6vHQEuVCv6PcIG2lBQJT1V2mJY/tcc5dJG2maYEcPHbMzs6eKW2nBaLSALN8zzC2rC0LTcti/zEzPz9/vljB6Ew+DOBWsUTT0thHhBCeFWs0LY31Y19K6RSxRgvEpTrhvb9DLNK0ONYIALvFKk3LY714WKxiaDYfcs5NiFUMif5KLGNI9PNiGUOi7xLLVEzSNS06xniFWKZioruaFv3/n3iM6oz+oGnRrfzWpA4VE32qadFinYoz+rYsekCqJOmcm1jJ436yaP6XJIDvsugBqJokyS1Z9HBE351FD0DVJGOM5zV5qJVYp06SJL/JoocjelMW3Sd1kgwl52lk0UtQpe7K8e13D1uyjlGsA+DXOqK99483MKN/EusA+KSOaOfcRHGszzBn9HtinRDC7XXrI4D3hyj5jxjjWhkFSH5UR7T3/qphrakBbJRRQXf+lJUQ6QLJD1dY8FEAL8iooUfwAHhOX6oVRa/u1naZJOsb9D0yysQY12oNBvBnmWhFz3leZsFajrbqjzRlXAgLR6Q9AuDjJQ4arHxqWEn8Uhx7fPFwszSE9/6mPkuInok66b2/0+Tu0CYAcJ+e3H3sBDAtO/8e5b0w278H8DWAd0k+rbtB5+bmLmh6zJlMJpPJZDKZTCYjFvkHaq2E7AzX154AAAAASUVORK5CYII="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Solicitar retirada de árvore caída</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span>
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_126_490)"/>
+                                <defs>
+                                <pattern id="pattern0_126_490" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_126_490" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_126_490" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE2ElEQVR4nO2d24scRRTGy3jXf0BRIor6pBJUUFAJUfFP8IYXEMF3jS958QJ5iOiLF4wa/wNv0TcJGn3VaIzE+CAuDE6WnXR/X43G2xItOViL47LV2z3dXXN25vygYZnuPnX6o6Yuh55vnTMMwzAMwzAMw1hkQghnAbgdwJskvyXpSZ4meUI+897fnSOPoiguI/k8gC/xH1+QfE7Oua0MgCsAHCIZNjkOj8fja/rIIYRwNsmnAfyeaj+e2y3Xuq2G9/7m2HtDnSP2sDu6zGEwGFxI8sO6OZA8KPc4TYQQtgF4kORHJE8C+JPkT5Ks9/4JAKMGDxii2KX3/uqO8ju35rdpfQ6H5F6nAe/9VQC+avoQrPegn3aRI4ADLXJ4yykRuXFvZbPjrjY5ypjcQQ673YyHi156Mv/fo96YNseiKG4FcKYi9tckb5Qj/p267sx4PL7FzYI4JocMx4lp8gshnE/yeN3JLk6WByuuPy4xXW7ixJdD6J+nzG9vRQ89sry8fPH6e+QzOVeRy95OxGv4ICe1Cj0ej68FsJoQeVS1KSmK4nIApxL3rva1xk8Sl3A5hP5uitzeT8Xz3t+32f1lWd5f8W14z81jj0bDyRDAzi5Ekmsr4nS6maqk4S6rzXFnw7w+T8T5TYaFunHkWrknEeuwy0VZlg9k6M2fNMmJ5K6KWPuaPiOAFyri7XQZ19FHehS5bLoFT22zAfyxsrJySdNnHI1Gl8q9iZgfu8w7w5U+REbDcRDADZmGsrUc/wZwvcsFySulrtvlcOGnKCa1qWe0yPWAy4kMI3FJJDurYVz6DWsm/Iss4WR10XTim0S+BTMQ+pTTQJ1kXUeY0PmEfmkGQr/oFk3oEMJ5InaOng2gEJGlTbdoQjdFWz6tMKEzYUJnwoTOhAmdCRN6DoUeDocXkXytyYs6LZZ3JPmqmhdscgoNYH/fAm8g+H63SEKHELZVFOn7PH6Vtt2sMaEzMe9DB8nXnQZyCj349wWYV+JE1avA8qoryZcXcjJsirZ8WmFCZ8KEzoQJnQkTOhMm9JwLPeyh7qGuvqFBaPS4eVFT35i10KH/7biObfckJnQm5nHooJb6hgahBz3UPdTVNzQIXQdt+bTChM6ECZ0JEzoTJnQmTOgFEnrYou6hur6hTWh0sHlRWd/QJHTobjuub9s9Sc2HON2XS5gJzXwuYR3VPfTVNyZpMSaiqx+2t6l7qKtvJFzC6v7OMPTtEpYQf8N2l5aWLnAa2QouYQknxw3blN9/O21sBZewjZBJN2d7c+8SloLksxXtPeM0od0lbJMO8mOF0D+IWa3TgnaXsBQkH6/R5mNOC5pdwlKQ3FFnmRev2eE0oNklbD0yFIjNRVwX12pXrhVHsZkPI1pdwtYqdgC2l2V5G4A9bYxbopn3nhhru8R2OdHmEjacshwqnkkp36TU4XKizSUMU9Q0APwF4GEAj4hHkkqhNbmEhSmqdLEnP7QWI4pdq2e73GhxCQvNhT7qvb8pYZF/TJ3QdV3C5D9CeO/vIflZjy5hdYaOo9JzQwjnpOLIOQCPkvxGldAVLmGyKvnAe3/vZNGc5C4AbwP4XgrqXbmETZZDxRU3Wv4cA/AOySfLsryuaUzxtSP5FIB3Yyz5pq1Om6NhGIZhGIZhGIbTzD+Wg4qUhCZWBAAAAABJRU5ErkJggg=="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Solicitar retirada de animal morto na rua</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span>
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_126_483)"/>
+                                <defs>
+                                <pattern id="pattern0_126_483" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_126_483" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_126_483" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChElEQVR4nO3bT4oTQRzF8XLhf9FT6CFcuBF3LryCXmEuEGdjXOpC0KWXcCOIm/EGzkIhEmxDIHkvrW4cgiVNVJrQmelOd37VqXofqE0IRc+XorrSTDsnIiIiIiIizXnvzwO4T/IZySMAUwAnJH2L8ZPkMYBXi8XinkuZ9/4iyYMibMuodcb7PM9vudSQfEDyi0Hg/wMrd1wKvPfnSA4A/LaMXI6d5/lNl0Dk1yECr8V+52JGchA6cmncdbHuyTh7u3hD8lFx05pMJldPmetFB6v6pYvNaDS6dMaN7+N8Pr9dd77i+x2s6GMXG5IHp6yst7PZ7HrD+X50EPq7i/DHyHTTSgZwo+mcXe3TLiZY/eKr/EObbBdlCl2B5PNNNz63JYWuUDy72PCHPqz6vmwJG/bnJJ877BKAX1Whp9PptdDXFhWmsD/2ARXaBhV6v0J77y8AeEryG8kMwLD4LNQ80YYGMFyfo/gs1DzRhuZqBa7PMwk1T8yhs4p5voaaJ6mtg+STUPPEfjMc/l2RbW+GredJ+njnYz1R9C00Yj1R9C00Yz1R9DB0FuWJYh+2DsZwoujpzXAY3YmiDuqhkg0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtIiIiEgMsiy7QvIQwGcAy9J/Di2Lz0g+Ho/Hl0NfZwyRP2w6Q5fGkWK3QPKwRuR/YxD6evcWVltDrdAAPoW+3r2F0p5cI/Qy9PXuLdbfNvTcow0qtA0qtA0qtA0qtA0qtA0qtA0qtA0qtA0q9O6svbXqG460XuzZwatnvslI5i3XNrZcyT7Jt1zb6CCy135dg0IbUWgRERERERHXb38AGjPVEf6VFcIAAAAASUVORK5CYII="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Solicitar Ajustes na iluminação pública</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span>
+                            <svg width="108" height="73" viewBox="0 0 108 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="108" height="73" fill="url(#pattern0_126_481)"/>
+                                <defs>
+                                <pattern id="pattern0_126_481" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_126_481" transform="matrix(0.00751029 0 0 0.0111111 0.162037 0)"/>
+                                </pattern>
+                                <image id="image0_126_481" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Solicitar plantio de árvore</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span>
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_126_484)"/>
+                                <defs>
+                                <pattern id="pattern0_126_484" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_126_484" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_126_484" width="70" height="70" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFgklEQVR4nO1cTYgcRRQuD/7/HDR4MIr/hpic/Sd6VVS86EmEHIwHczAaIhHcBFGMIEIwukG9BLwLCgFRMZJD9GoiGjVsWNws63R9X/WuWX9jy3Mr7Lh29ez0VE13zdQH77LTXa/q29fV7331ZpRKSEhISEhISEhISEhISEhISEhISEiIFQDuBfAegOMkfyFZeDIZ61sA7wC4R40rSF4P4DOPxFYagE/Epxon5Hl+O4DOsEjuIrtjjLlNjQNIXtcEyV1k/wzgWjXqIHmwKZK7txE16lsGGyb5rGmt71SjCq31/SSPlkTYXwB2LiwsXOnLl4wF4AUZ20H2pBp1aK03AniD5KIl+sVQvgDschA9rcYFWutrSH6U5/kVoXzMz8+vcUW11npDKL9jCZJHHFH9XNNzGymQ3D2W2Udbsh0Av83Ozl481MkA2ATgXQDfjZrmMD8/v6Yip35wKJMwxtzQNs0hz/Nb5J8C4GGSm40xW0huN8Y8v8K2WHvMGPOoBEue5zfPzMxc1D0eyR0Vc9oXnOQsy+4AkLVNcyA56cEHSX4D4Pse1/04tpqDMeZGAH8Pay7yFAQjGsDHTZHMZTtYEQiHhziPt4uiONc7yVrru1tAclGlOZB8dshzOZZl2VqvRLv2wDZpDlmW3drAP/7r6enpC30SPe0gekK1SHMgeXLYZAN42suCpb53RbPkm6oZzWFj2T0A9jcQ1Ue8LFjq+6AOeqSTsg9OTU1doDxBHvVOp3OVHPLKvi41AYA/bfD8SvIlY8xNRVGcZ7OZibOqoSPg6GVitmAoc7BLjQiyLFsL4DUpYMo+lxdwFdkDT0DqeqnvywYXPUCNEeB+ZwxOtNT1rsFDasJthGwnwYgm+WbFS+A/2qzoBVZz2CQ6glnSE0RXeGql5kDyGZJPek2NAqMoivNDRvQPPVKb41YfYI20aKeKCBJEQYiuelRCltJtlWFJvuydaEltpJ4PRPLpLMuujkmGJXmfKymoTbSQINtBwIW9HqEMu6/q/r5JlpeT1O8BF3TGFc1tlmHt3M54I1rq9sALOhSxDHvIJ9FfBl7Itohl2G0+ia5K005Lh5DU/6vVAbjCsixbH7EMu94b0VUky4uqjg7AZTs5qjJs385dJPXqdavSAbg8xv6IZNgN/ciwfTt3kSTbhIfi5pG2ybD9tn7JGkqunanjuJQk2ZPr6gBcis4/siy7rOxeAJ82JcO6nkRX61en07kUwO8rrn91aBEtx+89iP687L65ublLmpRh67R+WVHslEQygD29grAUFURN1GkK5PL9W8vuA/BQkzJsY61fFWQtuvJLrfVdPbKOvUVRnOPw91YIGbb1rV89XmaLsqd1nafJC3C3PWdz3fO+i2QBgBOhZNhWt375Woy1U8aYy12+8jxf59lfPK1fnie6uYcMO3BjYrStX74mCEC7jqlCy7CxtH75mtxkhQz7v6+zRWDeW79cjr6w54eLg2wbALa2gLRmW7+qiO6+RvJbacnSWj8A4AnbxfmK/WmHD6R9VhoOVTnRXzVN2ADmTxKQasdLLd+QDMvVW9++vLV+WSL2lDjpv5Z3gGFl2FWTXNeXLx7+Tbss2TMD1fIOMKAMu1obxJeKBQwrw67KBvGlYgEDybD92CC+VCxgIBnWZ0RX+VKxgIFk2D736Nq+VCxgGBm2X6vtS8UC+pdha5Ndx5eKBfRP2FBNxQK2gKxENNtvKhawBWSNNdFY6iSVwwDTIJHi+1hVV6uKBVzFAuxp9zrbZf+4PaneS/IAyQ/trxgclYNd6afGkiS40DXegvzNfnbCHjQctvcesGPtkLHlS53iq+R0PHqiZ0oW8JNqGWKZZ2My7LjNszEZdtzmmZCQkJCQkJCQkJCQoOriHy0PPRx3Ly4zAAAAAElFTkSuQmCC"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Solicitar manutenção da rua</span>
+                    </a>
+                </div>
+
+                <div id="denuncias-content" class="right-content-block hidden">
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_175_357)"/>
+                                <defs>
+                                <pattern id="pattern0_175_357" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_175_357" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_175_357" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Denunciar descarte irregular de lixo</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_177_359)"/>
+                                <defs>
+                                <pattern id="pattern0_177_359" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_177_359" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_177_359" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Denunciar poluição sonora</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="80" height="80" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="80" height="80" fill="url(#pattern0_178_360)"/>
+                                <defs>
+                                <pattern id="pattern0_178_360" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_178_360" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_178_360" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACi0lEQVR4nO2a64oTQRCFR8HbGyg+oHcfRgR9Dn/5Au6urrC+QSD/EpJT0cTfLQUjiua6W5mukz4fFCzZ0PPVSU+mJz1dJ4QQQgghhBAtUkq5B+A1gAszW3n53wBe+f9a9wlhNps9NrNvZlbWFYArf0+rPiH47NjWlP3V3BAzKZtPGH567mrK/jT3sjWfMAB83rcxMztvzScMM1se0NiyNZ9ajX1vzedkT1Uk8wnD16WZLj5I5hN9Y3C153Lqbms+ofjif1tzqHDDksknFJ8dfiqa2Xl/QfI689dqzJxsPkIIIYQQlemXRy/65dHqgNvaciK16peDz0spd44S8nQ6fQTga4JmS4YCcDmZTB4eYyYrZPsv7C+hM7v/uqjemCUsAM8ig77I0JTlrLNaP5y3Vj8ig157kOt815vZh23iAD6ORqP7GceJymEjEQco5CFH5bCVmx6gnEDIETns5CYHqB1O5Dhpg84QTuQ4KYPOEk7kOOmCzhRO5Dipgs4WTgka59AcrsW+BzjlkNMEfeohpwi6hZCrB91KyEMFrR+VbICnT/utq9oNlaT1KSxo3yNL0FDJWPP5/Gn0VtZl7aYsWflz1+GbtL4R6XtktZuzRCGHb87+xj893yPz76VGL5BL732xWDw52uMGOz6A25vkOhKMxZ9GlN2fRpTdn0aU3Z9GlN2fRpTdn0aU3Z9GlN2fRpTdn0aU3Z9GlN2fRpTd/1BR2/D+bNVlQ0EPhIIeCAU9EAp6IBT0QNCIsvvTiLL704iy+9OIsvvTiLL704iy+wOwfyUBoCMBLP5m9nbNjHjTkWAs/uPx+AGA92b2s693/lpHwpjNv5Ryy6sjpZD7CyGEEEIIIYQQXdv8Aj1XCAjAT9U3AAAAAElFTkSuQmCC"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Denunciar obra irregular</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span>
+                            <svg width="70" height="70" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="90" height="90" fill="url(#pattern0_178_361)"/>
+                                <defs>
+                                <pattern id="pattern0_178_361" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_178_361" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_178_361" width="70" height="70" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Outra denúncia</span>
+                    </a>
+                </div>
+
+                <div id="resultados-content" class="right-content-block hidden">
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_180_640)"/>
+                                <defs>
+                                <pattern id="pattern0_180_640" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_180_640" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_180_640" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAABh0lEQVR4nO3avUoDQRSG4dXCn8LrTiMWdnZeg0Xwbha2sFk8R0Sx/GQgETuTyJz5ex+YKgs58zIsyybTBAAAAAAAAAAAAISQdGlmt2b26u4fZvawLMt1zLcPFNndt+6u3yvFLj1b95F36730fCNETuut9IwjRE63jrvSc3YfOX2eris9a7MkXbj70x8n+Xme56vSszaLyAGIHIDIAYgcgMgBiByAyAGIHIDIAYgcgMgBiByAyAGIHIDIAYgcgMgBiByg+ciSziWdTRVTyz+krut64+6PZvbl7p/ufl/joGo5cpIi1z6wWo+cbhe7k1zt4Go98j50+rdkrRtQD5H30j25xo2op8i1bkgVztTds6kqmqXbDaqCGUKU3KhGiVxywxotcomNa9TIkQE0euSIECJy/iAicv4wInL+QCLyYf4TSkQ+zinBROTTHBNORI55w+Y9voWLdshpdU5y2dhG5Pyxjcj5YxuR88c2IuePbUTO9ui3cfeX3drwCAcAAAAAAAAAAIDpxzeE5xRr7F5OOwAAAABJRU5ErkJggg=="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Ver minhas solicitações</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="71" height="70" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect x="0.5" width="70" height="70" fill="url(#pattern0_180_641)"/>
+                                <defs>
+                                <pattern id="pattern0_180_641" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_180_641" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_180_641" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJUlEQVR4nO2dTW7UQBBGaxU4An9HJLBLuEHuwyonALICTjA7pLGt+owmi2TVyFKQYAQz6Vbsdte8J30bq8dd82S1R7WoMQMAAAAAAAAAgL9IKT1z93fufiPpVlJqPLfu/sXdz6fvZmtgGIY3kr6vQE6aI+7+dRiG11Ulbzab55El6w/ZVZ9sd39fW4KWk/22puibNUjQMvlcTbSk3QoEpIWyqyk6nVIM0UJ0pBiihehIMUQL0ZFiiBaiI8VaEe3u95Iu+r5/NWUcx8uHa/9bf/d7/VPV/Jh9mxc9juPl/j2mawc+czFX7Uf2bVt013Uv9++x3W5f5Kx/Kg7t27zo/h9HwNRUryH60L4hjw53/1Dj6Diyb9ui3f1+ks3LMJPcQtV4EC1Eh4ohWoiOFEO0EB0phmghOlKsFdFOm7SM3EJH2qRl5Bba0SYtI7fQnjZpvaPDaZMeJ7dQp01aRm6hajyIFqJDxRAtREeKIVqIjhRDtBAdKdaKaKdNWkZuoSNt0jJyC+1ok5aRW2hPm7Te0eG0SY+TW6jTJi0jt1A1HkQL0aFiiBaiI8UQLURHiiFaiI4Uqyj6lMax/awmmgGDCzFN2F2BgBR+ZOY0GFXStxMZAntmKxhrHFa2r2Gs8d6g7vPpHAvygtxJ+jQdF9Wf5DlJKZ1J+ljw9F1PM61r1x9atiO5nMfKRvICsh3J88t2JM/2m/1K0o+HXK3mrzsAAAAAbC38AvB953Z1ww46AAAAAElFTkSuQmCC"/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Acompanhar denúncias</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_180_643)"/>
+                                <defs>
+                                <pattern id="pattern0_180_643" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_180_643" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_180_643" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAExElEQVR4nO2cW4scRRTHmxhNfNaoiUIE3xIQfIq3r+BD4ucwJm7cCIIGE8yLiqB+hCQqEReE4FsuLxpfjOj7wgquM9P9/0/3ZKPrJSUHe2EZurq7ZnpquqvPHw4MPXXp85vqupyuqShSqVQqlUqlUqlUKpVKpVJF6+vr+wG8DuA2ybskTaB2F8D3AE4aY/Z5hRzH8VMkf2oBBOPZ7ojv3lpyTyGbHdheWrZ0Fy1w1izTALzmA/TtNjjL5dp3CwdNctICR82SbeIDdGHlUaDisvxV0FTQi5CC9iQF7UkK2pMUtCcpaE9S0J6koD1JQXuSgu4r6L5ZpKCpoBmQKWgqaBOSKWgqaBOSKWgqaBOSdQY0gG2Sq6PR6JDYeDw+m1/rRPrOgB6Px2eny5ZrXUkfdQX0cDg8OF32YDB4oivpo66AHo1Gh6bLjuP4ya6kj7rcdQB4qyvpo66ABrAtzrkMVm1K3xnQ7LgpaCpoE5IpaCpoE5IpaHqzKwAOewfdtlgEPRiAP0ieM8bs9Qa6bbEI+rUbRUv4hYAuWsLKtWWlp3/7LUmSowqahY/+PwCukzyVpumxyWTymDHmQTH5LNdInpY0krZGeb/HcXxkoaDbFotguclfqi+kafpIXb8lreQhuVVR9qYEo6J51ZVYBO12qaw/NcbsKfM/f4ouV9Rxa+4Bcp5HlUu0/NFfsfm1sbHxMMlPSY5z+0SulXA4U9GdnO8daPwP5HiFXx8X5PuoIs8JG+z8CXymV6BZ0pJ3JANZAaxBDR6rJT/wF30CfWkev+rkBfC5BfT9mad8LQBnHOxe3fM15gGdD5CFsxEAH/QB9Hvz+uWQ/30L6IHMy4ONdQD422WePC/oLMsO2AbGJEleCjbWAeB6E345lnFz1sG4y0vwU0345VjGG5Yf/apLOaU31LZ9F2maHmvCL5cykiR50QL6R5dyOhXryLLsQBN+uRxUNZlMHreUs+FyL52KdRhjHmrCL5LX6sKWdJYythoD3TYzzYGWH/lbOYZuVtAA/gwWdObedVyrKLOyZdu6DgCjYEHHcfy8i195a6yCvVYWRrUNhiR/Cfk4ttOuvtWBDeCVEjYrljxfhXzA4A1n52rABvB2CehbljzvzAL6ZAsgmiqTJXiWZY8uAPZx1yU4gJdnvYk7ywbJenZhFtC7/FybKu8bY8wDRelJXrRAjmcKKu061rgLsLeKVpQOsPdInyzdhbRkG+R8hXrPcg+fzVr/zk3sk1Nn5UDUlg+Ql6MFS96kWFrzfQDPRiGJ5JUS2GcWVW9FBPHrKDQBOJzvhStyWAapE03XSfJVAP9a6txubDNN20TyXEnrEthvNljXqg1ybhejUGWM2Svz57I+W16kzrOTSPLa+uRddfzgGmvpnIbD4UHZcFg1G5F3fC7xEEmbT+Fss4sd2yT5dNQHJUlytGifhqU7kddPK0mSvCBBIWmJYvJZruXL6pt1NjmSTEk+F/VJcRwfyVuXr2nkZu8gTy0kCuMPTZr0yb3pLioGyPOL+BsGgL+k3w5+4HORbDgE8KWs1hoALGWsBTtPbnCg/LDOYFkAOJatvcEtq6MFSiJqsoNIZhUSmM+DZL/K9E26mRzqz/IdgHcl1DlzFC6Kov8A6uVys976JQwAAAAASUVORK5CYII="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Histórico de atendimentos</span>
+                    </a>
+                </div>
+
+                <div id="ajuda-content" class="right-content-block hidden">
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_182_645)"/>
+                                <defs>
+                                <pattern id="pattern0_182_645" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_182_645" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_182_645" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD2UlEQVR4nO2cS4/URhSFzQYCyYJVhAIiG3YJbLJBsAgPiVcSImURZcM24RVQBBt+Ao8NfwAJhEDiL7BCIszAJpMfEI0yYjJ0xnVOQYPC29EdNZAI2+0ul91tzTnSkTU9unWvv6623WX3TRJJkiRJkiRJkiRJkiQpmZ2d/QDASQB3ST4mmf3XAI6ExnKy/BjANIATWZatahVymqYbSP5eVByAB1mWrQyJ5WR7xupvBbLNxgqgLtaIzSbcM63MbPvIDysGwDehseyAAfzcBui7FQrZGBrLbniqcdAk+8MKsUNEaCy74X4boIcWUieWHbFAU6CTccMRaHbPAk2BTsYNR6AZZgAvANwEcNx7/8Xi4uIn9tXftva3vT74/wuBZhDg1wBueO83VakZwKckr1icQLOyHwL4OqR2Wxog+UigOXQmP3DOfVanfufc5wB6As1CyM8BfBljH5xz2wA8FWjm+pfI+3FaoPnebP6j6EaCCcAWO9mRvG8z37YkLwPYXBRja8oAZgWa7+y9/7FozMEtsZcFb9DLsrVj59xhgeZbWK/6/f7HeeM5536oEP/ae/99Xnyv11tn4ws0l0BNF330Sf5VcZz7RbefANwTaC75Wt5Yzrn9o4zjnNtXUNN1gebSjD4f6arhVN44AC4INOMZwLG8mgCcE2jGs3Nue15NAC4JNKPN5ntZlq3IqwnAbwLNKH5kX2jy6rHLRl3eMcpMflp0tWECcCZ07MYAjwKrTiwjQgZwsKSWtQD+FmjWsj2os6NsP0JPggLNt/Zpmm4t2wdb/6ibpxG4o8KqE8satnuD3vs9ZfXbMTvGPcRG4I4Ka4ygT5bVDuArAP/EyNUI3FFh1YlluG8VXSsPcn8H4FmsfI0BHgVWnViGe2dRXgCHitasBZoj+c+inAC+jQ15OYO+WvLND03kbBRyVVh1YhlgAGfz8nnvf2oqZ6OQq8KqE8uOWKAp0Mm44Qg0u2eBpkAn44Yj0OyeBZrtdEtYrqCnvPd75+bmVlse2w6WQ6cFmtF8u+hJU3ud5K8CzSjeNaTe3QLN+l5YWPiwrN5er/eRQLO+5+fn15TVa2+EQLPZBf9Bzl0CzSjWyTAklgG2zjb2vPSbw4htnXMHmux4syxB8/9+0kYegWY7FmgKdDJuOALN7rkN0ENbqr1Z3AmJZTf8sHHQajDIdhoMWtfZCqAPhsayA7bONo2DHvxidSakCWxWLXaibT8uKmsAEFWD1sQzQ9oarwqJ5YRDTtN0fdKmBm0Y7Mn5qbyTHICjobGcLFt9d+xw0dpMliRJkiRJkiRJkiRJSiZb/wLYRVxAAyTORAAAAABJRU5ErkJggg=="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Perguntas Frequentes (FAQ)</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_184_646)"/>
+                                <defs>
+                                <pattern id="pattern0_184_646" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_184_646" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_184_646" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGc0lEQVR4nO2da4hWRRjHT/cbUUHRjYgwqy/RHfrSl25UVFgg3ZSSsuxmQhctCvJDBn2LgkhSo+iOQRehwgsGEV2lCNNQV1e3bfe85/+f85qkpk487VlazN0zc96ZM/O65wfzadmZ5/nvnOfMPOeZ2SRpaGhoaGhoaNgvIHk+gKdIfgJgDQCQ1CS3kdwCYDnJeUqpi0Lb2pWQnATgh0JUbdhWpml6Tmjbu4LBwcGTASy1FFgPN5nxWZadFtqPqJHHn2R/VZH5X3sxtC/RQvICmYwORNYSt0P7EyXtdvt4ebG5EJlD7Z3QPkWH1voAkksciqwBPBDar+jIsuxWlyKT1HmenxXar6jo7e09guRGx0JvCe1XdACY6Xo2k3w9tF9RobU+EMA610IDmBLat6gAcIOH2axbrdapoX2LCgDvexB6tS97tdYHK6UukXAHYJFs90lukp0ogL+LJnmYTfIzAAsBPKyUulh+NwlBX1/fkST/9CD0S67DW5Zl10rc72QzBaAlf5wsy66RPpO6IHmzj7BBcpIL+3p6eg4nOQvAeg/vkHXyVGitD0t8A2C+Bwd2kTzWgW1TSfZ6mggj20YAd7hRdHRn1ngQ+ptObJKMH4DPahB477bEywu83W6fAGCPB4PnVbUJwGUA/ggg8vAkSUle0RXxWSl1ZUWRp8qKIZTII8TeCeB2l0LP9WDkX7Kdr2DLPQB2hxZ5hB9iy11OhAaw2IOBy2ztkKVWDDN5H77sAnC9C6HXejBwlo0NSqkJJPPQoo7RFMkzKossj3exDHM5A9amaXq0qQ1a64NIfhWBmGVtZeXNTZ7nZzsUWJgvqxgbG5RS90Ugomm7u5LQsjLoRFiSH0mYkO+LVf7a/f39R5H8fYwxdpB8Ik3TUxLPyBhKqdnFmKP53SfpCuvO5Y1qKfBmAE9WFXZvsiybMdZ44nhSMwDmlNh0b5VOn7YQ+Rf5aOvSKZI/jzVmHTN5b2TMkid5lXWnJF/xvQEZDfmOWDZmCKFl+22gxZlWnQJ4zzAe79BaH+LSIQ7F9rJx5yQ1U4TGMrtm2nb6ueGM3ujaIZJvmfyBRew6ZrbMZBG55GU43N606lwybIZCf+3aMZI/WbwfomrWcRrAb4YdL3YtNIYyZN0q9ICtswMhPkkJho9olA3A9sQGkm3Dzp9NHANg+7gR2sLZxz0InY6n0LErVJEigFXj4mVYVI2adu4m+V1heeci12GYx7Bp5ss7rfWhph0rpSYnjgHwkMG4s+vMY1jM6Jm2mTOjjrMsuy5xTJ7nE8vGdb1RKctjWEy8CV0jtADguzqFNsljGMzmH60GDR06BJLT68x1mOQxDNp0q0FDvwwFKcMqihC95jos8xhjtS2VEv8hl3fDkJzmIm7W1KYlVQi5YRn5ZAH4IgIRy9qXlb8qhdyCjwTA6THvFOXzqNiYVMWivu3lxDMkL5cyrAhF3tnx1yXTKlIAHyY1oJSaHFO1UlGlNLVjx0Im/keD5BuxzOQsy25LXGDxKWtTUgPp0M5tWwQiD0ooc+ZYyI+z+wLAB6FFJvmxXJ2RuMSy3OBqp4NHtp4GsEEpdUviA8sCml8HBgZO8rji2B5I4LWyIZOUROILAHdaGiXLwbmtVutSV2f15BiFxXpebPi+ONxU+cIWWbMDWCBPqWyYEt/IOY0OZkO7uG7iMbmpRspvbceXowsWM1lJDnt4HNmlFZe33A/gNQAr5PH/t6Z16DCnHI0Q1hc/WwDgwaJu0NrWjvBQtrvQNLwAeMbwkJII/IKvsFULclDSQyH6egDHlI09VPU7ah+7ixDxiE1Re9R4OlrxaNm4cjxODhUVT8KG4rz2q3Ixi+uq1SjwdFhoRWi/osPT8bcdlRLk+zMkb/IQOrRS6qrQvkWFxyPKz4f2LTpk1+chfHwb2q/o8HWNhFLquNC+jYs4TUcXo+w3FDe8GOcbaN6c11V3PQDe7abLq7oWOcHvI3ykAY6wRU1RX+Hjyp8poX2LDpNS2gpCLwrtV6zZvB7HYveG9itK5LuZ61md5/nE0H5FR1Fl+qlLobMsmxHar5ivnt/sUOy3Q/sULQDOkzs8Hb0QV4T2J2pIXjjWDTE0b96LJLuerVu3nmhROqb3MZvRUcnreAPAjWWHe/h/kZc3/8KpIgDOlfN/xcVVq4sZu6e4f1r+Kdkyks/JPy8LbWtDQ0NDQ0NDQ9L1/AMY8os9V2e/3QAAAABJRU5ErkJggg=="/>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="text">Telefones úteis</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <span class="icon">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="70" height="70" fill="url(#pattern0_184_647)"/>
+                                <defs>
+                                <pattern id="pattern0_184_647" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_184_647" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_184_647" width="90" height="90" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                            </svg>
+
+                        </span>
+                        <span class="text">Fale conosco</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Conecte-se conosco nas redes sociais</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon icon-facebook"></a>
+                    <a href="#" class="social-icon icon-youtube"></a>
+                    <a href="#" class="social-icon icon-linkedin"></a>
+                    <a href="#" class="social-icon icon-instagram"></a>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h3>Prefeitura Municipal de Irecê</h3>
+                <p>13.715.891/0001-04 | Rua Lafaiete Coutinho, s/n - Bairro: Fórum, CEP: 44864-254 | Município de Irecê</p>
+                <p>Telefone: (74)3641-3116</p>
+                <p>Atendimento: segunda a sexta-feira, das 08:00 às 12:00 e das 14:00 às 17:00 horas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../ifrastrutura/script.js"></script>
+</body>
+</html>
