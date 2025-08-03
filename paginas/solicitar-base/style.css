@@ -48,12 +48,6 @@ textarea {
     margin-bottom: 20px;
 }
 
-#mensagem {
-    margin-top: 1rem;
-    text-align: center;
-    color: var(--dark-grey);
-}
-
 button {
     width: 100%;
     padding: 12px;

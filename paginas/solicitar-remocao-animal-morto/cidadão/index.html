@@ -1,38 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solicitação de remoção de animais mortos</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Solicitar Remoção de Animal Morto</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <a href="../../cidadao-main/index.html">
-    <button id="btnVoltar" class="btn-voltar">← Voltar</button>
-  </a>
-
-  <div class="form-container">
-    <h1>Solicitar remoção de animais mortos</h1>
-
+  <div class="container">
+    <h2>Solicitar Remoção de Animal Morto</h2>
     <form id="maintenanceForm">
-      <fieldset>
-        <legend>Endereço onde se encontra o cadaver</legend>
-        <label for="rua">Rua:</label>
-        <input type="text" id="rua" name="rua" required />
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro" required />
-      </fieldset>
-      <label for="descricao">Descrição:</label>
-      <textarea id="descricao" name="descricao" rows="4" required placeholder="Descreva melhor o local onde está o cadaver..."></textarea>
+      <label for="rua">Nome da rua:</label>
+      <input type="text" id="rua" name="rua" required/>
 
-      <button type="submit">Enviar Solicitação</button>
+      <label for="bairro">Nome do Bairro:</label>
+      <input type="text" id="bairro" name="bairro" required/>
+
+      <label for="descricao">Descrição:</label>
+      <textarea name="descricao" id="descricao" rows="4" required placeholder="Descreva melhor o local e onde está o cadáver..."></textarea>
+
+      <button type="submit">Solicitar</button>
+
+      <button type="submit"><a href="../../home-ofc/index.html">Voltar</a></button>
     </form>
-    
+
     <p id="mensagem"></p>
   </div>
 
+  <script src="script.js"></script>
 </body>
-
 </html>
