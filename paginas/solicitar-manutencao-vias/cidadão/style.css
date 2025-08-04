@@ -1,105 +1,121 @@
-@import url("../../../global.css");
-
+/* Removi o @import pois você não forneceu global.css */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: var(--cream);
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    position: relative;
+  background-color: #eaeaea; /* cream */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
 }
 
 .form-container {
-    background-color: var(--light-grey);
-    padding: 2rem;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff; /* branco para ficar igual ao exemplo */
+  padding: 40px; /* padding igual ao exemplo */
+  border-radius: 6px; /* borda arredondada igual */
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* sombra mais suave */
+  font-family: Arial, sans-serif;
 }
 
 h1 {
-    color: var(--dark-grey);
-    margin-bottom: 1.5rem;
-    text-align: center;
+  color: #333333; /* dark grey */
+  margin-bottom: 30px; /* mesmo espaçamento do h2 do exemplo */
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem; /* tamanho maior parecido com h2 */
 }
 
 fieldset {
-    border: 1px solid var(--dark-grey);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
+  border: 1px solid #ccc; /* borda cinza clara igual ao exemplo */
+  padding: 1rem;
+  margin-bottom: 20px; /* espaçamento igual ao input/textarea do exemplo */
+  border-radius: 6px; /* borda arredondada igual */
 }
 
 legend {
-    padding: 0 10px;
-    font-weight: bold;
-    color: var(--dark-grey);
+  padding: 0 10px;
+  font-weight: bold;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
 }
 
 label {
-    display: block;
-    margin: 0.5rem 0 0.2rem;
-    color: var(--dark-grey);
+  display: block;
+  margin-bottom: 5px; /* margem igual ao exemplo */
+  font-size: 14px; /* tamanho igual ao exemplo */
+  color: #333333;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
 }
 
 input,
 select,
 textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--dark-grey);
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px; /* padding igual ao exemplo */
+  margin-bottom: 20px; /* margem igual */
+  border: 1px solid #ccc; /* borda igual */
+  border-radius: 6px; /* borda arredondada igual */
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
 }
 
 button {
-    background-color: var(--light-orange);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    width: 100%;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  width: 100%;
+  padding: 12px; /* padding igual */
+  margin-top: 20px;
+  background-color: #d6743a; /* light orange */
+  color: white;
+  font-size: 16px; /* tamanho igual */
+  font-weight: bold; /* negrito igual */
+  border: none;
+  border-radius: 6px; /* borda arredondada igual */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
 }
 
 button:hover {
-    background-color: var(--dark-orange);
+  background-color: #c56328; /* dark orange */
 }
 
 #mensagem {
-    margin-top: 1rem;
-    text-align: center;
-    color: var(--dark-grey);
+  margin-top: 1rem;
+  text-align: center;
+  color: #333333; /* dark grey */
+  font-family: Arial, sans-serif;
 }
 
 .btn-voltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: var(--light-orange);
-    color: var(--dark-grey);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 10;
-    width: 4rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #d6743a; /* light orange */
+  color: #333333; /* dark grey */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px; /* borda arredondada igual */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  width: 4rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 .btn-voltar:hover {
-    background-color: var(--dark-orange);
+  background-color: #c56328; /* dark orange */
 }

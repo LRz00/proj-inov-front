@@ -1,0 +1,66 @@
+/* Estilo visual padrão com base na paleta usada */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #eaeaea; /* cor de fundo da página */
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: #ffffff; /* fundo branco da caixa */
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Título da página */
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+/* Tabela com base no Bootstrap + cores da paleta */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th {
+  background-color: #d6743a; /* laranja da paleta */
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table td {
+  color: #333333;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #ccc;
+}
+
+/* Mensagem de erro ou vazio */
+#mensagem {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #c56328; /* tom mais escuro do laranja para mensagens */
+}

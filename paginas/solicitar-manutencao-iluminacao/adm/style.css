@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: var(--cream);
+  background-color: #eaeaea;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -17,22 +17,22 @@ body {
 }
 
 .lista-container {
-  background-color: var(--light-grey);
+  background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
   max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .titulo-lista {
   text-align: center;
-  color: var(--dark-grey);
+  color: #333;
   margin-bottom: 1.5rem;
 }
 
 .ocorrencia {
-  border: 1px solid var(--dark-grey);
+  border: 1px solid #333;
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 1rem;
@@ -40,17 +40,17 @@ body {
 }
 
 .ocorrencia h3 {
-  color: var(--dark-grey);
+  color: #333;
   margin-bottom: 0.5rem;
 }
 
 .ocorrencia p {
   margin: 0.2rem 0;
-  color: var(--dark-grey);
+  color: #333;
 }
 
 .ocorrencia button {
-  background-color: var(--light-orange);
+  background-color: #d6743a;
   color: white;
   border: none;
   padding: 0.4rem 0.75rem;
@@ -62,26 +62,25 @@ body {
 }
 
 .ocorrencia button:hover {
-  background-color: var(--dark-orange);
+  background-color: #c56328;
 }
 
 .btn-voltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: var(--light-orange);
-    color: var(--dark-grey);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 10;
-    width: 4rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #d6743a;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
+  width: 4rem;
 }
 
 .btn-voltar:hover {
-    background-color: var(--dark-orange);
+  background-color: #c56328;
 }
-

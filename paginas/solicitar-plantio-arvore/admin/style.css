@@ -1,4 +1,4 @@
-@import url("../../../global.css");
+/* Mantive o @import conforme seu código */
 
 * {
   box-sizing: border-box;
@@ -8,80 +8,91 @@
 }
 
 body {
-  background-color: var(--cream);
+  background-color: #eaeaea; /* substituindo var(--cream) */
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  position: relative; /* para o btn-voltar absoluto funcionar */
 }
 
 .lista-container {
-  background-color: var(--light-grey);
-  padding: 2rem;
-  border-radius: 8px;
+  background-color: #fff; /* substituindo var(--light-grey) para branco limpo */
+  padding: 40px; /* mais espaçamento igual ao exemplo */
+  border-radius: 6px; /* arredondado igual */
   width: 100%;
   max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* sombra mais suave */
+  font-family: Arial, sans-serif;
 }
 
 .titulo-lista {
   text-align: center;
-  color: var(--dark-grey);
-  margin-bottom: 1.5rem;
+  color: #333333; /* substituindo var(--dark-grey) */
+  margin-bottom: 30px; /* mais espaçamento igual */
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .ocorrencia {
-  border: 1px solid var(--dark-grey);
+  border: 1px solid #ccc; /* borda mais suave */
   padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  background-color: white;
+  border-radius: 6px; /* borda arredondada igual */
+  margin-bottom: 20px; /* espaçamento maior */
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  color: #333333;
 }
 
 .ocorrencia h3 {
-  color: var(--dark-grey);
   margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .ocorrencia p {
   margin: 0.2rem 0;
-  color: var(--dark-grey);
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .ocorrencia button {
-  background-color: var(--light-orange);
+  background-color: #d6743a; /* light orange */
   color: white;
   border: none;
-  padding: 0.4rem 0.75rem;
-  border-radius: 4px;
+  padding: 8px 12px; /* padding mais confortável */
+  border-radius: 6px;
   font-size: 0.9rem;
   cursor: pointer;
   margin-right: 0.5rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 .ocorrencia button:hover {
-  background-color: var(--dark-orange);
+  background-color: #c56328; /* dark orange */
 }
 
 .btn-voltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: var(--light-orange);
-    color: var(--dark-grey);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 10;
-    width: 4rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #d6743a; /* light orange */
+  color: #333333; /* dark grey */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px; /* borda arredondada igual */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  width: 4rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 .btn-voltar:hover {
-    background-color: var(--dark-orange);
+  background-color: #c56328; /* dark orange */
 }
-
