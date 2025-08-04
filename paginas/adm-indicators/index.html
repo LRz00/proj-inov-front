@@ -2,26 +2,31 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard Administrativo</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <h1>Dashboard Administrativo</h1>
 
   <div class="card-container">
-    <div class="card" id="total-solicitacoes">Carregando total de solicitações...</div>
-    <div class="card" id="total-usuarios">Carregando total de usuários...</div>
+    <div class="card highlight" id="total-solicitacoes">Total de Solicitações: ...</div>
+    <div class="card highlight" id="total-usuarios">Total de Usuários: ...</div>
   </div>
 
   <h2>Solicitações por Tipo</h2>
-  <ul id="tipos-lista"></ul>
+  <div class="canvas-wrapper">
+      <canvas id="tipoChart"></canvas>
+  </div>
+
+  <h2>Porcentagem por Status</h2>
+  <div class="canvas-wrapper">
+  <canvas id="statusPie"></canvas>
+  </div>
 
   <h2>Contagem por Status</h2>
   <ul id="contagem-status"></ul>
-
-  <h2>Porcentagem por Status</h2>
-  <ul id="porcentagem-status"></ul>
 
   <script src="script.js"></script>
 </body>
