@@ -54,7 +54,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box; /* Include padding in the element's total width and height */
-    border-color: ##e68e59; /* Orange border as seen in the image */
+    border-color: #e68e59; /* Orange border as seen in the image */
     outline: none; /* Remove outline on focus */
 }
 
