@@ -104,6 +104,10 @@ header .user-profile a {
 
 .right-column {
     display: flex;
+    background-color: #ffecddb1;
+    border-radius: 8px;
+    margin-left: 50px;
+    padding: 20px;
     flex-direction: column;
     gap: 20px;
     flex-grow: 1; /* Allow it to take remaining space */
@@ -111,7 +115,7 @@ header .user-profile a {
 }
 
 .category-button {
-    background-color: var(--primary-orange);
+    background-color: #bb723aff;
     color: var(--white);
     padding: 25px 15px;
     border-radius: 8px;
@@ -126,6 +130,7 @@ header .user-profile a {
 
 .category-button:hover {
     background-color: #d86c1c; /* Slightly darker orange on hover */
+    transform: translateY(-5px);
 }
 
 .category-button.active {
@@ -155,9 +160,9 @@ header .user-profile a {
 }
 
 .action-item {
-    background-color: var(--primary-orange);
+    background-color: #d79665ff;
     color: var(--white);
-    padding: 25px 15px;
+    padding: 10px 15px;
     border-radius: 8px;
     text-align: center;
     display: flex;
@@ -166,10 +171,12 @@ header .user-profile a {
     transition: background-color 0.2s ease-in-out;
     box-shadow: var(--box-shadow);
     cursor: pointer;
+    margin-left: 90px;
 }
 
 .action-item:hover {
     background-color: #d86c1c; /* Slightly darker orange on hover */
+    transform: translateY(-5px);
 }
 
 .action-item .icon {
