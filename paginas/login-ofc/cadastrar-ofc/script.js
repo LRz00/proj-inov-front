@@ -1,10 +1,11 @@
 (() => {
   'use strict';
 
-  const form = document.querySelector('form'); // seleciona o único formulário da página
+  const form = document.querySelector('form');
 
   const cpfInput = document.getElementById('cpf');
 
+  // Máscara de CPF
   if (cpfInput) {
     cpfInput.addEventListener('input', (e) => {
       let value = e.target.value.replace(/\D/g, '');
@@ -27,21 +28,29 @@
     });
   }
 
+  // Submissão do formulário
   form?.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Sempre previne o envio tradicional
+    event.preventDefault();
 
     if (!form.checkValidity()) {
       event.stopPropagation();
-      form.classList.add('was-validated'); // opcional, só se quiser marcar campos inválidos visualmente
+      form.classList.add('was-validated');
       return;
     }
 
     const nome = document.getElementById('fullName')?.value.trim();
     const cpf = document.getElementById('cpf')?.value.replace(/\D/g, '');
-    const email = document.getElementById('email')?.value.trim();
+    const email = document.getElementById('email')?.value.trim(); // <- NÃO forçando para minúsculo
     const senha = document.getElementById('password')?.value;
+    const perfil = document.getElementById('tipoUsuario')?.value.toUpperCase(); // <- ainda necessário
 
-    const dados = { nome, cpf, email, senha };
+    const dados = {
+      nome,
+      cpf,
+      email,
+      senha,
+      perfil
+    };
 
     try {
       const resposta = await fetch('http://localhost:8080/usuarios', {

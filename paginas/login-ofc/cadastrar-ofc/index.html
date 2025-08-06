@@ -24,6 +24,14 @@
                 <label for="password">Senha:</label>
                 <input type="password" id="password" name="password" placeholder="" required>
 
+                <label for="tipoUsuario">Tipo de Cadastro</label>
+                    <select id="tipoUsuario" name="tipoUsuario" required>
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="cidadao">Cidadão</option>
+                    <option value="administrador">Administrador</option>
+                    </select>
+                <div class="invalid-feedback">Por favor, selecione o tipo de cadastro.</div>
+
                 <button type="submit">Criar conta</button>
             </form>
             <p>Já tenho uma conta? <a href="/paginas/login-ofc/index.html">ENTRAR</a></p>
