@@ -5,23 +5,17 @@ document.getElementById('maintenanceForm').addEventListener('submit', async func
   
     const usuario = JSON.parse(localStorage.getItem('usuario'));
   
-    const data = { 
-  nomeRua: document.getElementById('rua').value,
-  bairro: document.getElementById('bairro').value,
-  dataCriada: new Date().toISOString(), // Corrigido
-  nomeArvore: document.getElementById('arvore').value,
-  numCasa: document.getElementById('casa').value,
-  descricao: document.getElementById('descricao').value,
-  status: "ABERTA",
-  solicitante: {
-    id: 2,
-    nome: "eu",
-    senha: "123",
-    cpf: "12345678901",
-    email: "email@hotmail.com",
-    perfil: "1" // Corrigido
-      }
+    const data = {
+      descricao: document.getElementById('descricao').value,
+      nomeRua: document.getElementById('rua').value,
+      bairro: document.getElementById('bairro').value,
+      dataCriada: new Date(),
+      nomeArvore: document.getElementById('arvore').value,
+      numCasa: document.getElementById('casa').value,
+      status: "ABERTA",
+      solicitante: usuario,
     };
+
     console.log(data)
   
     try {
