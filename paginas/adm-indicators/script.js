@@ -51,6 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
         list.appendChild(li);
       }
     });
+
+  // Novo fetch para tempo médio de conclusão
+  fetch(`${API_BASE}/tempo-medio-conclusao`)
+    .then(res => res.json())
+    .then(data => {
+      // data: objeto { "EVENTOS": 2.5, "ILUMINACAO": 4.0, ... }
+      drawTempoMedioChart(data);
+    });
 });
 
 // Gráfico de barras por tipo
@@ -75,9 +83,7 @@ function drawTipoChart(counts) {
       scales: {
         y: {
           beginAtZero: true,
-          ticks: {
-            stepSize: 1
-          }
+          ticks: { stepSize: 1 }
         }
       }
     }
@@ -106,6 +112,42 @@ function drawStatusPie(labels, values) {
       responsive: true,
       plugins: {
         legend: { position: 'bottom' }
+      }
+    }
+  });
+}
+
+// Novo gráfico: tempo médio de conclusão
+function drawTempoMedioChart(data) {
+  const ctx = document.getElementById('tempoMedioChart').getContext('2d');
+
+  // Ordenar os tipos para manter mesma ordem
+  const valores = tipos.map(tipo => data[tipo] || 0);
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: tipos.map(t => tipoLabels[t]),
+      datasets: [{
+        label: 'Tempo Médio de Conclusão (dias)',
+        data: valores,
+        backgroundColor: 'rgba(100, 150, 242, 0.8)'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: true }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'Dias' },
+          ticks: {
+            stepSize: 1
+          }
+        }
       }
     }
   });
