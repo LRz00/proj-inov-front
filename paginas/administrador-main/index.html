@@ -41,7 +41,7 @@
         <span class="arrow">▶</span>
       </div>
       <div class="subcategory">
-        <button onclick="showService('iluminacao')">Solicitar Iluminação</button>
+        <button onclick="showService('iluminacao')">Solicitações de Manutenção Iluminação</button>
       </div>
 
       <!-- CATEGORIA 3 -->
@@ -50,7 +50,7 @@
         <span class="arrow">▶</span>
       </div>
       <div class="subcategory">
-        <button onclick="showService('reparo')">Solicitar Reparo de Vias</button>
+        <button onclick="showService('reparo')">Solicitações de Reparo de Vias</button>
       </div>
 
       <!-- CATEGORIA 4 -->
@@ -59,7 +59,7 @@
         <span class="arrow">▶</span>
       </div>
       <div class="subcategory">
-        <button onclick="showService('evento')">Solicitar Permissão de Evento</button>
+        <button onclick="showService('evento')">Solicitações de Permissão de Evento</button>
       </div>
 
       <!-- CATEGORIA 5 -->
@@ -68,7 +68,7 @@
         <span class="arrow">▶</span>
       </div>
       <div class="subcategory">
-        <button onclick="showService('denuncia')">Registrar Denúncia</button>
+        <button onclick="showService('denuncia')">Denúncias Registradas</button>
       </div>
 
       <!-- CATEGORIA 6 -->
@@ -78,6 +78,15 @@
       </div>
       <div class="subcategory">
         <button onclick="showService('remocao-animal')">Solicitar Remoção de Animal Morto</button>
+      </div>
+
+
+      <div class="category" onclick="toggleCategory(this)">
+        📈 Indicadores do Sistemas
+        <span class="arrow">▶</span>
+      </div>
+      <div class="subcategory">
+        <button onclick="showService('indicadores')">Visualizar Indicadores</button>
       </div>
 
       
@@ -119,26 +128,26 @@
 
       <div id="iluminacao" class="service-details">
         <h3>💡 Solicitação de Iluminação</h3>
-        <p>Solicite a instalação de iluminação pública em locais escuros para aumentar a visibilidade e segurança urbana.</p>
-        <a href="../solicitar-manutencao-iluminacao/cidadao/index.html">Acessar Serviço</a>
+        <p>Visualize solicitações de instalação ou manutenção de iluminação pública em locais escuros para aumentar a visibilidade e segurança urbana.</p>
+        <a href="../solicitar-manutencao-iluminacao/adm/index.html">Acessar Serviço</a>
       </div>
 
       <div id="reparo" class="service-details">
         <h3>🛠️ Solicitar Reparo em Vias</h3>
-        <p>Solicitação de reparos estruturais em ruas, calçadas ou avenidas em situação crítica ou com risco de acidentes.</p>
-        <a href="../solicitar-manutencao-vias/cidadão/index.html">Acessar Serviço</a>
+        <p>Visualize solicitações de reparos estruturais em ruas, calçadas ou avenidas em situação crítica ou com risco de acidentes.</p>
+        <a href="../solicitar-manutencao-vias/adm/index.html">Acessar Serviço</a>
       </div>
 
       <div id="denuncia" class="service-details">
         <h3>🚨 Fazer Denúncia</h3>
-        <p>Canal aberto para denúncia de irregularidades ambientais, sociais ou urbanas com total sigilo garantido.</p>
-        <a href="../denuncia_ocupacao/cidadao/index.html">Acessar Serviço</a>
+        <p>Visualize denuncias abertas sobre irregularidades ambientais, sociais ou urbanas com total sigilo garantido.</p>
+        <a href="../denuncia_ocupacao/adm/index.html">Acessar Serviço</a>
       </div>
 
       <div id="evento" class="service-details">
         <h3>📅 Permissão para Eventos</h3>
-        <p>Solicite autorização para realizar eventos públicos respeitando normas de uso de espaços e segurança.</p>
-        <a href="../solicitar-evento/cidadao/index.html">Acessar Serviço</a>
+        <p>Visualize solicitações de autorização para realizar eventos públicos respeitando normas de uso de espaços e segurança.</p>
+        <a href="../solicitar-evento/adm/index.html">Acessar Serviço</a>
       </div>
 
       <div id="remocao-animal" class="service-details">
@@ -147,6 +156,14 @@
         <a href="../solicitar-remocao-animal-morto/cidadão/index.html">Acessar Serviço</a>
       </div>
     </div>
+
+    <div id="indicadores" class="service-details">
+        <h3>📈 Visualizar indicadores do Sistema</h3>
+        <p>Visualização de graficos de utilização do Conecta Irecê, bem como detalhes de resoluções de solictações</p>
+        <a href="../adm-indicators/index.html">Visualizar</a>
+      </div>
+    </div>
+
 
   </div>
 </main>
