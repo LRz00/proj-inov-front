@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("lista-ocorrencias");
 
     function atualizarSolicitacao(id, dados) {
-        return fetch(`http://localhost:8080/solicitacao-man-via-publica/${id}`, {
+        return fetch(`http://localhost:8080/solicitacao-man-iluminacao-publica/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Busca as ocorrências e monta a lista
-    fetch("http://localhost:8080/solicitacao-man-via-publica")
+    fetch("http://localhost:8080/solicitacao-man-iluminacao-publica")
         .then(response => {
             if (!response.ok) throw new Error("Erro ao carregar dados");
             return response.json();
