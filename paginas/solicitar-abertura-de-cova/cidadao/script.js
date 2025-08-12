@@ -1,47 +1,40 @@
+const APIURL = "http://localhost:8080/solicitacao-enterro-abertura-cova" // William - mudar pro novo endpoint aqui
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('maintenanceForm');
-  const mensagem = document.getElementById('mensagem');
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Evita recarregar a página
-
-    // Pega os valores do formulário
-    const rua = document.getElementById('rua').value.trim();
-    const bairro = document.getElementById('bairro').value.trim();
-     const numCasa = document.getElementById('numCasa').value.trim();
-    const descricao = document.getElementById('descricao').value.trim();
-
-    // Monta o objeto com os dados
-    const dados = {
-      nomeRua: rua,
-      bairro: bairro,
-      numCasa : numCasa,
-      descricao: descricao
+document.getElementById('maintenanceForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+  
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+  
+    const data = {
+      descricao: document.getElementById('descricao').value,
+      nomeRua: document.getElementById('rua').value,
+      bairro: document.getElementById('bairro').value,
+      dataCriada: new Date(),
+      numCasa: document.getElementById('casa').value,
+      status: "ABERTA",
+      solicitante: usuario,
     };
 
+    console.log(data)
+  
     try {
-      const resposta = await fetch('http://localhost:8080/solicitacao-enterro-abertura-cova', {
+      const response = await fetch(APIURL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dados)
+        body: JSON.stringify(data)
       });
-
-      if (resposta.ok) {
-        mensagem.textContent = 'Solicitação enviada com sucesso!';
-        mensagem.style.color = 'green';
-        form.reset(); // Limpa o formulário
-      } else {
-        const erro = await resposta.text();
-        mensagem.textContent = `Erro ao enviar: ${erro}`;
-        mensagem.style.color = 'red';
+  
+      if (!response.ok) {
+        throw new Error('Erro ao enviar solicitação.');
       }
+  
+      document.getElementById('mensagem').textContent = 'Solicitação enviada com sucesso!';
+      this.reset();
     } catch (error) {
-      console.error('Erro:', error);
-      mensagem.textContent = 'Erro de conexão com o servidor.';
-      mensagem.style.color = 'red';
+      console.error(error);
+      document.getElementById('mensagem').textContent = 'Falha ao enviar solicitação.';
     }
   });
-});
+  

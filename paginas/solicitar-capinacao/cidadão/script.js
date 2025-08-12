@@ -1,38 +1,39 @@
+const APIURL = "http://localhost:8080/solicitacao-capinacao" // William - mudar pro novo endpoint aqui
 
-  document.getElementById('maintenanceForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Evita o recarregamento da página
-
-    // Captura os valores do formulário
-    const rua = document.getElementById('rua').value;
-    const bairro = document.getElementById('bairro').value;
-    const descricao = document.getElementById('descricao').value;
-
-    // Monta o objeto com os dados
-    const dados = {
-      nomeRua: rua,
-      bairro: bairro,
-      descricao: descricao
+document.getElementById('maintenanceForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+  
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+  
+    const data = {
+      descricao: document.getElementById('descricao').value,
+      nomeRua: document.getElementById('rua').value,
+      bairro: document.getElementById('bairro').value,
+      dataCriada: new Date().toISOString(),
+      status: "ABERTA",
+      solicitante: usuario,
     };
 
+    console.log(data)
+  
     try {
-      const resposta = await fetch('http://localhost:8080/solicitacao-capinacao', {
+      const response = await fetch(APIURL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dados)
+        body: JSON.stringify(data)
       });
-
-      const resultado = await resposta.json();
-
-      if (resposta.ok) {
-        document.getElementById('mensagem').textContent = 'Solicitação enviada com sucesso!';
-        document.getElementById('maintenanceForm').reset();
-      } else {
-        document.getElementById('mensagem').textContent = 'Erro: ' + (resultado.message || 'Não foi possível enviar a solicitação.');
+  
+      if (!response.ok) {
+        throw new Error('Erro ao enviar solicitação.');
       }
-    } catch (erro) {
-      console.error('Erro ao enviar:', erro);
-      document.getElementById('mensagem').textContent = 'Erro ao conectar com o servidor.';
+  
+      document.getElementById('mensagem').textContent = 'Solicitação enviada com sucesso!';
+      this.reset();
+    } catch (error) {
+      console.error(error);
+      document.getElementById('mensagem').textContent = 'Falha ao enviar solicitação.';
     }
-  })
+  });
+  
