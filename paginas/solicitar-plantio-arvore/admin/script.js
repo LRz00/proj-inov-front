@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("lista-ocorrencias");
 
     function atualizarSolicitacao(id, dados) {
-        return fetch(`http://localhost:8080/solicitacao-plantio-arvore`, { // William - mudar pro novo endpoint aqui
+        return fetch(`http://localhost:8080/solicitacao-plantio-arvore/${id}`, { // William - mudar pro novo endpoint aqui
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 descricao: ocorrencia.descricao || "",
                 comentarios: ocorrencia.comentarios || "",
                 nomeArvore: ocorrencia.arvore || "",
-                numeroCasa: ocorrencia.casa || "",
+                numeroCasa: ocorrencia.numeroCasa || "",
                 bairro: ocorrencia.bairro || "",
                 nomeRua: ocorrencia.nomeRua || "",
                 status: novoStatus.toUpperCase(),

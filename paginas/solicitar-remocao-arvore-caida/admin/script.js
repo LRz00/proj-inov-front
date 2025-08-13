@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("lista-ocorrencias");
 
     function atualizarSolicitacao(id, dados) {
-        return fetch(`http://localhost:8080/solicitacao-remocao-arvore-caida`, { // William - mudar pro novo endpoint aqui
+        return fetch(`http://localhost:8080/solicitacao-remocao-arvore-caida/${id}`, { // William - mudar pro novo endpoint aqui
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
