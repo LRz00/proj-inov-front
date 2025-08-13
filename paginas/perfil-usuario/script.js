@@ -22,5 +22,5 @@
 
   function logout() {
     localStorage.removeItem("usuario");
-    window.location.href = "../login-cidadao/index.html";
+    window.location.href = "../login-ofc/index.html";
   }

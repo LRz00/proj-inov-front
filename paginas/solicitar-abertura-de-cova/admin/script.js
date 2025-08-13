@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const dadosParaAtualizar = {
                 descricao: ocorrencia.descricao || "",
                 comentarios: ocorrencia.comentarios || "",
-                nomeArvore: ocorrencia.arvore || "",
                 numeroCasa: ocorrencia.casa || "",
                 bairro: ocorrencia.bairro || "",
                 nomeRua: ocorrencia.nomeRua || "",
@@ -73,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const dadosParaAtualizar = {
                 descricao: ocorrencia.descricao,
                 comentarios: novoComentario,
-                nomeArvore: ocorrencia.arvore || "",
                 numeroCasa: ocorrencia.casa || "",
                 bairro: ocorrencia.bairro,
                 nomeRua: ocorrencia.nomeRua,
@@ -114,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>Solicitação #${ocorrencia.id}</h3>
           <p><strong>Status:</strong> ${ocorrencia.status}</p>
           <p><strong>Descrição:</strong> ${ocorrencia.descricao}</p>
-          <p><strong>Nome da Árvore:</strong> ${ocorrencia.arvore}</p>
           <p><strong>Bairro:</strong> ${ocorrencia.bairro}</p>
           <p><strong>Rua:</strong> ${ocorrencia.nomeRua}</p>
           <p><strong>Numero da Casa:</strong> ${ocorrencia.casa}</p>
