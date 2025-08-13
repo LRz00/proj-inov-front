@@ -4,9 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function atualizarSolicitacao(id, dados) {
         return fetch(`http://localhost:8080/solicitacao-man-via-publica/${id}`, {
             method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dados),
         }).then(response => {
             if (!response.ok) throw new Error("Falha na atualização");
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Cria objeto com os campos obrigatórios para PATCH
             const dadosParaAtualizar = {
                 descricao: ocorrencia.descricao || "",
                 comentarios: ocorrencia.comentarios || "",
@@ -43,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 await atualizarSolicitacao(ocorrencia.id, dadosParaAtualizar);
                 alert("Status atualizado com sucesso!");
-                location.reload(); // recarrega a página para ver a atualização
+                location.reload();
             } catch (error) {
                 alert("Erro ao atualizar status.");
                 console.error(error);
@@ -63,10 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ocorrencia.comentarios || ""
             );
 
-            if (novoComentario === null) {
-                // Cancelou o prompt
-                return;
-            }
+            if (novoComentario === null) return;
 
             const dadosParaAtualizar = {
                 descricao: ocorrencia.descricao,
@@ -89,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return btn;
     }
 
-    // Busca as ocorrências e monta a lista
-    fetch("http://localhost:8080/solicitacao-man-iluminacao-publica")
+    // Buscar solicitações de manutenção de vias públicas
+    fetch("http://localhost:8080/solicitacao-man-via-publica")
         .then(response => {
             if (!response.ok) throw new Error("Erro ao carregar dados");
             return response.json();
@@ -98,26 +92,27 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             container.innerHTML = "";
 
-            if (!data.content || data.content.length === 0) {
+            const solicitacoes = data.content || data.items || []; // dependendo do PageableDto
+
+            if (solicitacoes.length === 0) {
                 container.innerHTML = "<p>Nenhuma ocorrência encontrada.</p>";
                 return;
             }
 
-            data.content.forEach(ocorrencia => {
+            solicitacoes.forEach(ocorrencia => {
                 const div = document.createElement("div");
                 div.classList.add("ocorrencia");
                 div.innerHTML = `
-          <h3>Solicitação #${ocorrencia.id}</h3>
-          <p><strong>Status:</strong> ${ocorrencia.status}</p>
-          <p><strong>Descrição:</strong> ${ocorrencia.descricao}</p>
-          <p><strong>Bairro:</strong> ${ocorrencia.bairro}</p>
-          <p><strong>Rua:</strong> ${ocorrencia.nomeRua}</p>
-          <p><strong>Data Criada:</strong> ${new Date(ocorrencia.dataCriada).toLocaleString('pt-BR')}</p>
-          <p><strong>Solicitante:</strong> ${ocorrencia.solicitante?.nome || "Desconhecido"} (${ocorrencia.solicitante?.perfil || "N/A"})</p>
-          <p><strong>Comentários:</strong> ${ocorrencia.comentarios || "Nenhum"}</p>
-        `;
+                    <h3>Solicitação #${ocorrencia.id}</h3>
+                    <p><strong>Status:</strong> ${ocorrencia.status}</p>
+                    <p><strong>Descrição:</strong> ${ocorrencia.descricao}</p>
+                    <p><strong>Bairro:</strong> ${ocorrencia.bairro}</p>
+                    <p><strong>Rua:</strong> ${ocorrencia.nomeRua}</p>
+                    <p><strong>Data Criada:</strong> ${new Date(ocorrencia.dataCriada).toLocaleString('pt-BR')}</p>
+                    <p><strong>Solicitante:</strong> ${ocorrencia.solicitante?.nome || "Desconhecido"} (${ocorrencia.solicitante?.perfil || "N/A"})</p>
+                    <p><strong>Comentários:</strong> ${ocorrencia.comentarios || "Nenhum"}</p>
+                `;
 
-                // Cria e adiciona os botões
                 const btnStatus = criarBotaoStatus(ocorrencia);
                 const btnComentario = criarBotaoComentario(ocorrencia);
 
@@ -127,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 botoesDiv.appendChild(btnComentario);
 
                 div.appendChild(botoesDiv);
-
                 container.appendChild(div);
             });
         })
@@ -135,19 +129,21 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Erro no fetch:", error);
             container.innerHTML = "<p>Erro ao carregar ocorrências.</p>";
         });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:8080/solicitacao-man-vias-publica/1/media")
-    .then(res => {
-      if (!res.ok) throw new Error("Erro ao obter média");
-      return res.json();
-    })
-    .then(dados => {
-      document.getElementById("media-valor").textContent = `Média de avaliações: ${dados.toFixed(1)}`;
-    })
-    .catch(erro => {
-      console.error("Erro ao carregar média:", erro);
-      document.getElementById("media-valor").textContent = "Não disponível";
-    });
+    // Média de avaliações
+    const mediaElemento = document.getElementById("media-valor");
+    if (mediaElemento) {
+        fetch("http://localhost:8080/solicitacao-man-via-publica/media")
+            .then(res => {
+                if (!res.ok) throw new Error("Erro ao obter média");
+                return res.json();
+            })
+            .then(dados => {
+                mediaElemento.textContent = `Média de avaliações: ${dados.toFixed(1)}`;
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar média:", erro);
+                mediaElemento.textContent = "Não disponível";
+            });
+    }
 });

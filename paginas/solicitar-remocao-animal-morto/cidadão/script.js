@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const resposta = await fetch('https://suaapi.com/api/solicitacoes', { // Substitua pela URL correta
+      const resposta = await fetch('', { // Substitua pela URL correta
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

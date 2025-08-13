@@ -5,6 +5,8 @@ const tamanhoPagina = 10;
 async function carregarSolicitacoes(pagina = 0, tamanho = 10) {
   const tabela = document.getElementById('tabela-solicitacoes');
   const msg = document.getElementById('mensagem');
+
+  tabela.innerHTML = '';
   msg.textContent = '';
   msg.className = '';
 
@@ -15,9 +17,10 @@ async function carregarSolicitacoes(pagina = 0, tamanho = 10) {
     const data = await response.json();
     console.log("Resposta da API:", data);
 
+    // Ajuste: o array de solicitações geralmente está em "content"
     const solicitacoes = data.content || [];
 
-    if (solicitacoes.length === 0 && pagina === 0) {
+    if (solicitacoes.length === 0) {
       msg.textContent = "Nenhuma solicitação encontrada.";
       return;
     }
@@ -31,7 +34,7 @@ async function carregarSolicitacoes(pagina = 0, tamanho = 10) {
         <td>${item.descricao}</td>
         <td>${item.status}</td>
         <td>${new Date(item.dataCriada).toLocaleDateString('pt-BR')}</td>
-        <td>${item.solicitante ? item.solicitante.id : ''}</td>
+        <td>${item.solicitante ? item.solicitante.nome || item.solicitante.id : ''}</td>
       `;
       tabela.appendChild(tr);
     });
